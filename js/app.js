@@ -35,7 +35,8 @@ function normalizeImageUrl(url) {
   if (!url) return '';
   url = url.trim();
   if (url.startsWith('http') || url.startsWith('data:')) return url;
-  if (!url.startsWith('/')) url = '/' + url;
+  // Ensure relative path on Github Pages by stripping leading slash
+  if (url.startsWith('/')) url = url.substring(1);
   return url;
 }
 
@@ -562,31 +563,43 @@ function openReader(epubUrl) {
   // Set initial font size
   epubRendition.themes.fontSize(epubFontSize + 'px');
 
-  // Apply custom theme for elegant reading
-  epubRendition.themes.default({
-    'body': {
-      'font-family': '"Roboto", "Georgia", serif !important',
-      'color': '#2D2D2D !important',
-      'background': '#FFFCF5 !important',
-      'line-height': '1.85 !important',
-      'padding': '20px 28px !important'
-    },
-    'p': {
-      'text-align': 'justify !important',
-      'margin-bottom': '14px !important',
-      'text-indent': '24px !important'
-    },
-    'h1, h2, h3': {
-      'font-family': '"Roboto", sans-serif !important',
-      'color': '#352B2B !important',
-      'border-bottom': '2px solid #FFC300 !important',
-      'padding-bottom': '8px !important',
-      'margin-bottom': '18px !important'
-    },
-    'a': {
-      'color': '#2F69FD !important'
-    }
+  // Register Custom Themes
+  epubRendition.themes.register("light", {
+    "body": { "background": "#FFFCF5 !important", "color": "#2D2D2D !important" }
   });
+  epubRendition.themes.register("dark", {
+    "body": { "background": "#1E1E1E !important", "color": "#F5F5F5 !important" }
+  });
+  epubRendition.themes.register("sepia", {
+    "body": { "background": "#F4EFE6 !important", "color": "#4A3C31 !important" }
+  });
+
+  // Apply base defaults
+  epubRendition.themes.default({
+    'body': { 'padding': '20px 28px !important' },
+    'p': { 'text-align': 'justify !important', 'margin-bottom': '14px !important', 'text-indent': '24px !important' },
+    'h1, h2, h3': { 'font-family': '"Roboto", sans-serif !important', 'border-bottom': '2px solid #FFC300 !important', 'padding-bottom': '8px !important', 'margin-bottom': '18px !important' },
+    'a': { 'color': '#2F69FD !important' }
+  });
+
+  // Load from local storage or set defaults
+  const savedTheme = localStorage.getItem('epubTheme') || 'light';
+  epubRendition.themes.select(savedTheme);
+  
+  const savedFont = localStorage.getItem('epubFont') || 'sans-serif';
+  const fontMapping = { 'sans-serif': '"Roboto", sans-serif', 'serif': '"Georgia", serif' };
+  epubRendition.themes.font(fontMapping[savedFont]);
+  
+  const savedLineHeight = localStorage.getItem('epubLineHeight') || '1.8';
+  epubRendition.themes.override('line-height', savedLineHeight + ' !important');
+
+  // Sync UI settings buttons with saved states
+  setTimeout(() => {
+    document.querySelectorAll('.setting-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelector(`.setting-btn[data-theme="${savedTheme}"]`)?.classList.add('active');
+    document.querySelector(`.setting-btn[data-font="${savedFont}"]`)?.classList.add('active');
+    document.querySelector(`.setting-btn[data-lineheight="${savedLineHeight}"]`)?.classList.add('active');
+  }, 100);
 
   // Display first page
   epubRendition.display().then(() => {
@@ -805,6 +818,51 @@ function bindAllEvents() {
     // Reader font size
     if (target.closest('#btn-font-decrease')) { changeReaderFontSize(-2); return; }
     if (target.closest('#btn-font-increase')) { changeReaderFontSize(2); return; }
+
+    // Toggle settings panel
+    if (target.closest('#btn-reader-settings')) {
+      document.getElementById('reader-settings-panel')?.classList.toggle('active');
+      return;
+    }
+
+    // Close settings panel when clicking outside
+    if (!target.closest('.reader-settings-panel') && !target.closest('#btn-reader-settings')) {
+      document.getElementById('reader-settings-panel')?.classList.remove('active');
+    }
+
+    // Settings: Theme
+    if (target.closest('.setting-btn[data-theme]')) {
+      const btn = target.closest('.setting-btn[data-theme]');
+      const theme = btn.dataset.theme;
+      document.querySelectorAll('.setting-btn[data-theme]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      if(epubRendition) epubRendition.themes.select(theme);
+      localStorage.setItem('epubTheme', theme);
+      return;
+    }
+
+    // Settings: Font Family
+    if (target.closest('.setting-btn[data-font]')) {
+      const btn = target.closest('.setting-btn[data-font]');
+      const fontObj = { 'sans-serif': '"Roboto", sans-serif', 'serif': '"Georgia", serif' };
+      const val = btn.dataset.font;
+      document.querySelectorAll('.setting-btn[data-font]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      if(epubRendition) epubRendition.themes.font(fontObj[val] || fontObj['sans-serif']);
+      localStorage.setItem('epubFont', val);
+      return;
+    }
+
+    // Settings: Line Height
+    if (target.closest('.setting-btn[data-lineheight]')) {
+      const btn = target.closest('.setting-btn[data-lineheight]');
+      const lh = btn.dataset.lineheight;
+      document.querySelectorAll('.setting-btn[data-lineheight]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      if(epubRendition) epubRendition.themes.override('line-height', lh + ' !important');
+      localStorage.setItem('epubLineHeight', lh);
+      return;
+    }
 
     // TOC item click
     const tocItem = target.closest('[data-toc-href]');

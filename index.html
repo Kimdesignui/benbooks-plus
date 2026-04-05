@@ -61,7 +61,7 @@
     <div class="container-1440">
       <div class="header-inner">
         <a href="#" class="header-logo">
-          <img src="/assets/img/benbooks-logo.svg" alt="BenBooks">
+          <img src="assets/img/benbooks-logo.svg" alt="BenBooks">
         </a>
         <div class="header-search">
           <input type="text" id="header-search-input" placeholder="Nhập từ khóa tìm kiếm...">
@@ -90,7 +90,7 @@
           <!-- Banner -->
           <div class="banner-wrapper">
             <div class="banner-img">
-              <img src="/assets/img/banner-welcome.jpg" alt="Chào mừng đến với tủ sách Benbooks dành cho hội viên">
+              <img src="assets/img/banner-welcome.jpg" alt="Chào mừng đến với tủ sách Benbooks dành cho hội viên">
             </div>
           </div>
 
@@ -329,7 +329,35 @@
         <button id="btn-font-decrease" class="reader-font-btn" title="Thu nhỏ chữ"><i class="bi bi-type"></i>−</button>
         <span class="reader-font-size" id="reader-font-size">16</span>
         <button id="btn-font-increase" class="reader-font-btn" title="Phóng to chữ"><i class="bi bi-type"></i>+</button>
+        <button id="btn-reader-settings" title="Cài đặt"><i class="bi bi-gear"></i></button>
         <button data-action="close-reader"><i class="bi bi-x-lg"></i></button>
+        
+        <!-- Settings Panel -->
+        <div class="reader-settings-panel" id="reader-settings-panel">
+          <div class="setting-group">
+            <span class="setting-label">Màu nền</span>
+            <div class="setting-options">
+              <button class="setting-btn setting-theme-light active" data-theme="light">Sáng</button>
+              <button class="setting-btn setting-theme-sepia" data-theme="sepia">Vàng</button>
+              <button class="setting-btn setting-theme-dark" data-theme="dark">Tối</button>
+            </div>
+          </div>
+          <div class="setting-group">
+            <span class="setting-label">Phông chữ</span>
+            <div class="setting-options">
+              <button class="setting-btn active" data-font="sans-serif">Hiện đại</button>
+              <button class="setting-btn" data-font="serif" style="font-family: Georgia, serif;">Sách in</button>
+            </div>
+          </div>
+          <div class="setting-group">
+            <span class="setting-label">Giãn dòng</span>
+            <div class="setting-options">
+              <button class="setting-btn" data-lineheight="1.4">Hẹp</button>
+              <button class="setting-btn active" data-lineheight="1.8">Vừa</button>
+              <button class="setting-btn" data-lineheight="2.2">Rộng</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="reader-main">
@@ -399,8 +427,8 @@
           <p><i class="bi bi-envelope-fill"></i> Email: haianh.pham@benitovn.com</p>
           <p><i class="bi bi-credit-card-fill"></i> Mã số thuế: 0109653575</p>
           <div class="footer-app-badges">
-            <img src="/assets/img/download-ios.svg" alt="App Store">
-            <img src="/assets/img/download-chplay.svg" alt="Google Play">
+            <img src="assets/img/download-ios.svg" alt="App Store">
+            <img src="assets/img/download-chplay.svg" alt="Google Play">
           </div>
         </div>
         <div class="footer-col">
@@ -414,7 +442,7 @@
         <div class="footer-col">
           <h5>Về chúng tôi</h5>
           <ul><li><a href="#">Giới thiệu</a></li><li><a href="#">Liên hệ</a></li></ul>
-          <div class="footer-cert"><img src="/assets/img/bo-cong-thuong.png" alt="Bộ Công Thương"></div>
+          <div class="footer-cert"><img src="assets/img/bo-cong-thuong.png" alt="Bộ Công Thương"></div>
         </div>
       </div>
     </div>
@@ -423,8 +451,8 @@
 
   <!-- Floating Actions -->
   <div class="floating-actions" id="floating-actions" style="display:none">
-    <button class="floating-btn messenger"><img src="/assets/img/messenger.svg" alt="Messenger"></button>
-    <button class="floating-btn zalo"><img src="/assets/img/zalo.svg" alt="Zalo"></button>
+    <button class="floating-btn messenger"><img src="assets/img/messenger.svg" alt="Messenger"></button>
+    <button class="floating-btn zalo"><img src="assets/img/zalo.svg" alt="Zalo"></button>
     <button class="floating-btn scroll-top" id="btn-scroll-top"><i class="bi bi-chevron-up"></i></button>
   </div>
 
