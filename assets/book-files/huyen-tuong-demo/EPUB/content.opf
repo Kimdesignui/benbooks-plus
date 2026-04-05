@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="epub-id-1" prefix="ibooks: http://vocabulary.itunes.apple.com/rdf/ibooks/vocabulary-extensions-1.0/ calibre: https://calibre-ebook.com">
+  <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+    <dc:identifier id="epub-id-1">urn:uuid:31abc829-3ae5-4093-ac8b-59398f464f68</dc:identifier>
+    <dc:date id="epub-date">2021-07-31T05:05:30Z</dc:date>
+    <dc:language>en-US</dc:language>
+    <meta property="dcterms:modified">2026-04-05T07:09:41Z</meta>
+  </metadata>
+  <manifest>
+    <item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml"/>
+    <item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/>
+    <item id="stylesheet1" href="styles/stylesheet1.css" media-type="text/css"/>
+    <item id="id1" href="text/C0.xhtml" media-type="application/xhtml+xml"/>
+    <item id="id2" href="text/C1.xhtml" media-type="application/xhtml+xml"/>
+    <item id="id3" href="text/C2.xhtml" media-type="application/xhtml+xml"/>
+    <item id="id4" href="text/C3.xhtml" media-type="application/xhtml+xml"/>
+    <item id="id5" href="text/C4.xhtml" media-type="application/xhtml+xml"/>
+    <item id="id6" href="text/C5.xhtml" media-type="application/xhtml+xml"/>
+    <item id="id7" href="text/C6.xhtml" media-type="application/xhtml+xml"/>
+    <item id="id8" href="text/C7.xhtml" media-type="application/xhtml+xml"/>
+    <item id="id9" href="text/C8.xhtml" media-type="application/xhtml+xml"/>
+    <item id="id10" href="text/C9.xhtml" media-type="application/xhtml+xml"/>
+    <item id="id11" href="text/C10.xhtml" media-type="application/xhtml+xml"/>
+    <item id="id12" href="text/C11.xhtml" media-type="application/xhtml+xml"/>
+    <item id="id13" href="text/C12.xhtml" media-type="application/xhtml+xml"/>
+    <item id="id14" href="text/C13.xhtml" media-type="application/xhtml+xml"/>
+    <item id="id15" href="text/Notes.xhtml" media-type="application/xhtml+xml"/>
+    <item id="id" href="../fonts.css" media-type="text/css"/>
+    <item id="id16" href="logo.png" media-type="image/png"/>
+    <item id="id17" href="Spring.ttf" media-type="application/vnd.ms-opentype"/>
+    <item id="id18" href="UTM_Avenida.ttf" media-type="application/vnd.ms-opentype"/>
+    <item id="id19" href="UTM_Cabaret.ttf" media-type="application/vnd.ms-opentype"/>
+    <item id="id20" href="UTM_Charlotte.ttf" media-type="application/vnd.ms-opentype"/>
+    <item id="id21" href="UTM_Gille_Classic.ttf" media-type="application/vnd.ms-opentype"/>
+    <item id="id22" href="../Tac_gia.xhtml" media-type="application/xhtml+xml"/>
+    <item id="id23" href="_105107318_gettyimages-98021401.jpg" media-type="image/jpeg"/>
+    <item id="id24" href="../EbookInfo.xhtml" media-type="application/xhtml+xml"/>
+    <item id="id25" href="../jacket.xhtml" media-type="application/xhtml+xml"/>
+    <item id="cover" href="d48So-41--Doc-sach.jpg" media-type="image/jpeg" properties="cover-image"/>
+    <item id="titlepage" href="text/titlepage.xhtml" media-type="application/xhtml+xml" properties="svg calibre:title-page"/>
+  </manifest>
+  <spine toc="ncx">
+    <itemref idref="titlepage"/>
+    <itemref idref="id25"/>
+    <itemref idref="id24"/>
+    <itemref idref="id22"/>
+    <itemref idref="id1"/>
+    <itemref idref="id2"/>
+    <itemref idref="id3"/>
+    <itemref idref="id4"/>
+    <itemref idref="id5"/>
+    <itemref idref="id6"/>
+    <itemref idref="id7"/>
+    <itemref idref="id8"/>
+    <itemref idref="id9"/>
+    <itemref idref="id10"/>
+    <itemref idref="id11"/>
+    <itemref idref="id12"/>
+    <itemref idref="id13"/>
+    <itemref idref="id14"/>
+    <itemref idref="id15"/>
+  </spine>
+  <guide>
+    <reference type="toc" title="UNTITLED" href="nav.xhtml"/>
+  </guide>
+</package>

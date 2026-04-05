@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+body {
+  margin: 0;
+  font-family: "Crimson Pro", serif;
+}
+@font-face {
+  font-family: "UTM Gille Classic";
+  src: url(EPUB/UTM_Gille_Classic.ttf);
+}
+@font-face {
+  font-family: "UTM Cabaret";
+  src: url(EPUB/UTM_Cabaret.ttf);
+}
+@font-face {
+  font-family: "UTM Avenida";
+  src: url(EPUB/UTM_Avenida.ttf);
+}

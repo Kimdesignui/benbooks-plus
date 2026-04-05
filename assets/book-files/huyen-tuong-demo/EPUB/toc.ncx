@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="en">
+  <head>
+    <meta name="dtb:uid" content="urn:uuid:31abc829-3ae5-4093-ac8b-59398f464f68"/>
+    <meta name="dtb:depth" content="2"/>
+    <meta name="dtb:generator" content="calibre (5.24.0)"/>
+    <meta name="dtb:totalPageCount" content="0"/>
+    <meta name="dtb:maxPageNumber" content="0"/>
+  </head>
+  <docTitle>
+    <text>Table of Contents</text>
+  </docTitle>
+  <navMap>
+    <navPoint id="num_1" playOrder="1">
+      <navLabel>
+        <text>Tác giả Clinton Richard Dawkins</text>
+      </navLabel>
+      <content src="../Tac_gia.xhtml"/>
+    </navPoint>
+    <navPoint id="num_2" playOrder="2">
+      <navLabel>
+        <text>LỜI NHÀ XUẤT BẢN</text>
+      </navLabel>
+      <content src="text/C1.xhtml"/>
+    </navPoint>
+    <navPoint id="num_3" playOrder="3">
+      <navLabel>
+        <text>LỜI TỰA</text>
+      </navLabel>
+      <content src="text/C2.xhtml"/>
+    </navPoint>
+    <navPoint id="num_4" playOrder="4">
+      <navLabel>
+        <text>Chương 1 MỘT NGƯỜI KHÔNG TIN CÓ CHÚA SONG VẪN CÓ NHỮNG CẢM NHẬN TÔN GIÁO SÂU SẮC</text>
+      </navLabel>
+      <content src="text/C3.xhtml"/>
+    </navPoint>
+    <navPoint id="num_5" playOrder="5">
+      <navLabel>
+        <text>Chương 2 GIẢ THUYẾT VỀ THƯỢNG ĐẾ</text>
+      </navLabel>
+      <content src="text/C4.xhtml"/>
+    </navPoint>
+    <navPoint id="num_6" playOrder="6">
+      <navLabel>
+        <text>Chương 3 NHỮNG LUẬN CỨ VỀ SỰ HIỆN HỮU CỦA THƯỢNG ĐẾ</text>
+      </navLabel>
+      <content src="text/C5.xhtml"/>
+    </navPoint>
+    <navPoint id="num_7" playOrder="7">
+      <navLabel>
+        <text>Chương 4 TẠI SAO HẦU NHƯ CHẮC CHẮN KHÔNG CÓ THƯỢNG ĐẾ</text>
+      </navLabel>
+      <content src="text/C6.xhtml"/>
+    </navPoint>
+    <navPoint id="num_8" playOrder="8">
+      <navLabel>
+        <text>Chương 5 NGUỒN GỐC CỦA TÔN GIÁO</text>
+      </navLabel>
+      <content src="text/C7.xhtml"/>
+    </navPoint>
+    <navPoint id="num_9" playOrder="9">
+      <navLabel>
+        <text>Chương 6 NGUỒN GỐC CỦA ĐẠO ĐỨC: VÌ SAO CHÚNG TA TỐT?</text>
+      </navLabel>
+      <content src="text/C8.xhtml"/>
+    </navPoint>
+    <navPoint id="num_10" playOrder="10">
+      <navLabel>
+        <text>Chương 7 CUỐN SÁCH “TỐT” DUY NHẤT VÀ ĐẠO ĐỨC THAY ĐỔI THEO TINH THẦN THỜI ĐẠI</text>
+      </navLabel>
+      <content src="text/C9.xhtml"/>
+    </navPoint>
+    <navPoint id="num_11" playOrder="11">
+      <navLabel>
+        <text>Chương 8 TÔN GIÁO CÓ GÌ KHÔNG ỔN? TẠI SAO NÓ LẠI THÙ ĐỊCH ĐẾN VẬY?</text>
+      </navLabel>
+      <content src="text/C10.xhtml"/>
+    </navPoint>
+    <navPoint id="num_12" playOrder="12">
+      <navLabel>
+        <text>Chương 9 TUỔI THƠ, SỰ LẠM DỤNG VÀ THOÁT KHỎI TÔN GIÁO</text>
+      </navLabel>
+      <content src="text/C11.xhtml"/>
+    </navPoint>
+    <navPoint id="num_13" playOrder="13">
+      <navLabel>
+        <text>Chương 10 MỘT KHOẢNG TRỐNG TUYỆT ĐỐI CẦN THIẾT?</text>
+      </navLabel>
+      <content src="text/C12.xhtml"/>
+    </navPoint>
+    <navPoint id="num_14" playOrder="14">
+      <navLabel>
+        <text>DANH MỤC SÁCH ĐƯỢC TRÍCH DẪN HOẶC GIỚI THIỆU</text>
+      </navLabel>
+      <content src="text/C13.xhtml"/>
+    </navPoint>
+    <navPoint id="num_15" playOrder="15">
+      <navLabel>
+        <text>Chú thích</text>
+      </navLabel>
+      <content src="text/Notes.xhtml"/>
+    </navPoint>
+  </navMap>
+</ncx>
