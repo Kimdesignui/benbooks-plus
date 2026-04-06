@@ -415,6 +415,11 @@ function renderBookDetail(book) {
     const coverSrc = normalizeImageUrl(book.coverImage);
     if (coverSrc) {
       coverImg.src = coverSrc;
+      // Add Fancybox attributes for main cover
+      coverImg.dataset.fancybox = "gallery";
+      coverImg.dataset.src = coverSrc;
+      coverImg.style.cursor = "zoom-in";
+      
       coverImg.classList.remove('hidden-init');
       if (coverLoading) coverLoading.style.display = 'none';
       coverImg.parentNode.style.background = 'transparent';
@@ -433,10 +438,10 @@ function renderBookDetail(book) {
     const tryIcon = normalizeImageUrl(book.type === 'Audio' ? 'assets/images/nghe-thu.svg' : 'assets/images/doc-thu.svg');
     const tryLabel = book.type === 'Audio' ? 'Nghe thử' : 'Đọc thử';
     thumbs.innerHTML = `
-      <div class="thumb-item active"><img src="${coverSrc}" alt=""></div>
-      <div class="thumb-item"><img src="${coverSrc}" alt=""></div>
-      <div class="thumb-item"><img src="${coverSrc}" alt=""></div>
-      <div class="thumb-action-box"><span>Xem thêm<br>hình ảnh</span></div>
+      <div class="thumb-item active" data-fancybox="gallery" data-src="${coverSrc}" style="cursor:zoom-in"><img src="${coverSrc}" alt=""></div>
+      <div class="thumb-item" data-fancybox="gallery" data-src="${coverSrc}" style="cursor:zoom-in"><img src="${coverSrc}" alt=""></div>
+      <div class="thumb-item" data-fancybox="gallery" data-src="${coverSrc}" style="cursor:zoom-in"><img src="${coverSrc}" alt=""></div>
+      <div class="thumb-action-box" data-fancybox="gallery" data-src="${coverSrc}" style="cursor:zoom-in"><span>Xem thêm<br>hình ảnh</span></div>
       <button class="thumb-action-box light-mode" data-action="read-trial" data-url="${book.readTrialUrl || '#'}"><img src="${tryIcon}" alt="${tryLabel}"><span>${tryLabel}</span></button>`;
   }
 
