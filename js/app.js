@@ -73,7 +73,35 @@ document.addEventListener('DOMContentLoaded', () => {
     try { renderDetailSidebar(); } catch(e) { console.warn('[BenBooks] renderDetailSidebar error:', e); }
   }
   // App starts on SMS screen — header/footer hidden (SPA)
+  startAutoCarousel();
 });
+
+// =============================================
+// AUTO CAROUSEL SCROLLING
+// =============================================
+let autoScrollInterval = null;
+function startAutoCarousel() {
+  if (autoScrollInterval) clearInterval(autoScrollInterval);
+  autoScrollInterval = setInterval(() => {
+    // Only auto-scroll in detail page
+    if (document.body.getAttribute('data-page') !== 'detail') return;
+
+    const carousels = document.querySelectorAll('.books-scroll-wrap');
+    carousels.forEach(container => {
+      // Pause on hover
+      if (container.matches(':hover') || container.closest('.suggested-carousel-wrap:hover, .related-section:hover')) return;
+
+      const maxScroll = container.scrollWidth - container.clientWidth;
+      if (maxScroll <= 0) return;
+
+      let newScroll = container.scrollLeft + container.clientWidth * 0.8;
+      if (container.scrollLeft >= maxScroll - 10) {
+        newScroll = 0; // reset
+      }
+      container.scrollTo({ left: newScroll, behavior: 'smooth' });
+    });
+  }, 4000);
+}
 
 // =============================================
 // NAVIGATION
@@ -563,7 +591,7 @@ function renderRelatedBooks(book) {
   if (!el) return;
   const related = BOOKS_DATA.filter(b => b.id !== book.id && b.genre === book.genre).slice(0, 6);
   const items = related.length > 0 ? related : BOOKS_DATA.filter(b => b.id !== book.id).slice(0, 6);
-  el.innerHTML = `<div class="books-scroll">${items.map(b => createBookCard(b)).join('')}</div>`;
+  el.innerHTML = items.map(b => createBookCard(b)).join('');
 }
 
 /**
@@ -574,7 +602,7 @@ function renderSuggestedBooks(book) {
   const el = document.getElementById('suggested-books-grid');
   if (!el) return;
   const items = BOOKS_DATA.filter(b => b.id !== book.id).slice(0, 10);
-  el.innerHTML = `<div class="books-scroll">${items.map(b => createBookCard(b)).join('')}</div>`;
+  el.innerHTML = items.map(b => createBookCard(b)).join('');
 }
 
 // =============================================
@@ -1040,6 +1068,25 @@ function bindAllEvents() {
     if (readTrial) {
       const url = readTrial.dataset.url;
       if (url && url !== '#') window.open(url, '_blank');
+      return;
+    }
+
+    // Carousel Navigation
+    const carouselNav = target.closest('.btn-carousel-nav');
+    if (carouselNav) {
+      e.preventDefault();
+      const wrap = carouselNav.closest('.suggested-carousel-wrap, .related-section');
+      if (wrap) {
+        const scrollContainer = wrap.querySelector('.books-scroll-wrap, .books-scroll');
+        if (scrollContainer) {
+          const scrollAmount = scrollContainer.clientWidth * 0.8;
+          if (carouselNav.classList.contains('prev')) {
+            scrollContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+          } else {
+            scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+          }
+        }
+      }
       return;
     }
 

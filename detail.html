@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
@@ -44,7 +44,7 @@
             <i class="bi bi-telephone-inbound"></i>
             <div class="hotline-text">
                <span class="hotline-lbl">Hotline:</span>
-               <strong>0382832993</strong>
+               <strong>0888 080 290</strong>
             </div>
           </div>
           <button class="btn-goicuoc" id="btn-goicuoc-header">
@@ -57,7 +57,7 @@
   </header>
 
   <!-- BREADCRUMB SECTION -->
-<div class="breadcrumb-section pt-3 pb-2 pt-lg-4 pb-lg-3">
+<div class="breadcrumb-section pt-4 pb-0 bg-white mb-0">
   <div class="container-1440">
     <nav class="breadcrumb-bar">
       <a href="index.html"><i class="bi bi-house"></i> Trang chủ</a>
@@ -78,8 +78,9 @@
           <div class="col-lg-6">
             <div class="detail-cover-wrap">
               <div class="detail-cover-box" id="detail-cover-box">
-                <img loading="lazy" src="" id="detail-cover-img" alt="Book Cover" class="hidden-init">
-                <span id="detail-cover-loading">Đang tải...</span>
+                <a href="assets/images/covers/cover-1.jpg" data-fancybox="gallery" id="detail-cover-link" class="d-block w-100 h-100">
+                  <img loading="lazy" src="assets/images/covers/cover-1.jpg" id="detail-cover-img" alt="Book Cover" style="width: 100%; height: 100%; object-fit: contain; cursor: zoom-in;">
+                </a>
               </div>
               <!-- Tag Hội Viên Overlay -->
               <img loading="lazy" src="assets/images/tag-hoi-vien.svg" alt="Hội Viên Tag" class="cover-tag-vip" id="detail-cover-tag" style="display:none;">
@@ -96,30 +97,49 @@
             <h1 class="detail-h1" id="detail-book-title">[Ebook] Đang tải...</h1>
             <p class="detail-subtitle" id="detail-subtitle">Subtitle title</p>
 
-            <div class="detail-meta">
-              <span class="detail-rating"><strong id="detail-book-rating">4.5</strong> <span class="stars" style="color: #FFC300;">★★★★★</span></span>
-              <span class="meta-divider"></span>
-              <span class="detail-views"><strong id="detail-book-views">52358</strong> Lượt xem</span>
-              <span class="meta-divider"></span>
-              <span class="detail-editions"><strong id="detail-book-editions">3639</strong> Lượt đọc</span>
-              
-              <div class="meta-action-right">
-                <button class="btn-share-round" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), 'targetWindow', 'width=600,height=400'); return false;" title="Chia sẻ"><i class="bi bi-share"></i></button>
+            <div class="detail-meta d-flex align-items-center flex-wrap" style="gap: 16px; margin-bottom: 24px;">
+              <span class="detail-rating d-flex align-items-center" style="color:#333; font-size: 16px; font-weight: 700;">
+                <span id="detail-book-rating" style="margin-right: 4px;">4.5</span>
+                <span class="stars-desktop d-none d-md-flex align-items-center" style="font-size: 16px; color: #ffc300; gap: 2px;">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-half"></i>
+                </span>
+                <i class="bi bi-star-fill text-warning ms-1 d-md-none"></i>
+              </span>
+              </span>
+              <span class="meta-divider" style="color:#e0e0e0;"></span>
+              <span class="detail-views d-flex align-items-center" style="font-size: 16px;">
+                <span id="detail-book-views" style="font-weight: 700; color:#333;">1.205</span> 
+                <span class="d-none d-md-inline ms-1" style="color: #555;">Lượt xem</span>
+                <i class="bi bi-eye ms-1 text-muted d-md-none"></i>
+              </span>
+              <span class="meta-divider" style="color:#e0e0e0;"></span>
+              <span class="detail-editions d-flex align-items-center" style="font-size: 16px;">
+                <span id="detail-book-editions" style="font-weight: 700; color:#333;">10</span> 
+                <span class="d-none d-md-inline ms-1" style="color: #555;">Lượt đọc</span>
+                <i class="bi bi-book ms-1 text-muted d-md-none"></i>
+              </span>
+              <span class="meta-divider d-none d-md-inline" style="color:#e0e0e0;"></span>
+              <div class="meta-share ms-auto">
+                <button class="btn-share-round d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; background-color: #E8E8E8; border: none; border-radius: 50%; color: #333; transition: 0.2s;" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), 'targetWindow', 'width=600,height=400'); return false;" title="Chia sẻ"><i class="bi bi-share-fill" style="font-size: 18px;"></i></button>
               </div>
             </div>
 
-            <table class="detail-info-table">
+            <table class="detail-info-table mt-4">
               <tr>
                 <td class="lbl">Danh mục:</td>
                 <td id="detail-cat-link">
-                  <a href="index.html?cat=van-hoc" style="color: var(--primary); text-decoration: none; font-weight: 600; margin-right: 4px;">Sách văn học và nghệ thuật</a>, 
-                  <a href="index.html?cat=ngoai-ngu" style="color: var(--primary); text-decoration: none; font-weight: 600; margin-left: 4px;">Sách ngoại ngữ</a>
+                  <a href="#" class="cat-link d-inline-block hover-opacity" style="color: #D65A20; text-decoration: none; font-weight: 600; margin-right: 4px;">Sách văn học và nghệ thuật</a>, 
+                  <a href="#" class="cat-link d-inline-block hover-opacity" style="color: #D65A20; text-decoration: none; font-weight: 600; margin-left: 4px;">Sách ngoại ngữ</a>
                 </td>
               </tr>
               <tr>
                 <td class="lbl">Gói cước:</td>
                 <td id="detail-package">
-                  <img loading="lazy" src="assets/images/tag-hoi-vien.svg" alt="Hội Viên" style="height: 32px; transform: scaleX(1.5); transform-origin: left; vertical-align: middle;">
+                  <img loading="lazy" src="assets/images/tag-hoi-vien.svg" alt="Hội Viên" style="height: 32px; width: auto; vertical-align: middle;">
                 </td>
               </tr>
             </table>
@@ -138,14 +158,14 @@
     </div> <!-- / .detail-top-bg -->
 
     <!-- Bottom Block: Two Column Layout (Left Info, Right Sidebar) -->
-    <div class="detail-bottom-bg py-5">
+    <div class="detail-bottom-bg pt-5 pb-0">
       <div class="container-1440">
         <div class="main-layout detail-bottom-layout">
           <!-- Main Content Left -->
           <main class="main-content">
             
-            <!-- Author & Publisher Section -->
-            <div class="author-publisher-wrapper mb-4" style="background:var(--white); border-radius:var(--radius-lg); padding: 16px 20px; box-shadow: var(--shadow-sm); display: flex; flex-wrap: wrap;">
+            <!-- Author & Publisher Section (Hidden per request) -->
+            <div class="author-publisher-wrapper mb-4 d-none" style="background:var(--white); border-radius:var(--radius-lg); padding: 16px 20px; box-shadow: var(--shadow-sm); display: flex; flex-wrap: wrap;">
               <div class="col-12 col-md-6 mb-3 mb-md-0" style="padding-right: 20px; border-right: 1px solid var(--grayline);">
                 <div class="author-pub-block">
                   <span class="ap-label">Tác giả</span>
@@ -215,8 +235,9 @@
             <div class="detail-tabs mb-4">
               <div class="yellow-tabs-bar">
                 <ul class="nav nav-pills" role="tablist">
-                  <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-intro">Giới thiệu</button></li>
-                  <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-toc">Mục lục</button></li>
+                  <li class="nav-item"><button class="nav-link active text-uppercase" data-bs-toggle="tab" data-bs-target="#tab-intro">Giới thiệu</button></li>
+                  <li class="nav-item"><button class="nav-link text-uppercase" data-bs-toggle="tab" data-bs-target="#tab-toc">Mục lục</button></li>
+                  <li class="nav-item"><button class="nav-link text-uppercase" data-bs-toggle="tab" data-bs-target="#tab-author">Tác giả</button></li>
                 </ul>
               </div>
               <div class="tab-content yellow-tabs-content">
@@ -224,7 +245,11 @@
                   <div class="tab-content-body" id="detail-book-desc" style="padding: 24px 16px; color: var(--text-dark); position: relative; max-height: 200px; overflow: hidden;">
                     <strong>Cơ thể siêu rắc rối</strong><br><br>Nhấn xem đầy đủ để hiển thị mô tả chi tiết của sách.
                   </div>
-                  <div class="text-center pb-4 pt-2"><button class="btn btn-outline-warning rounded-pill" style="font-weight: 600; padding: 6px 24px; color: var(--text-dark); border: 2px solid var(--primary); background: #fff;"><i class="bi bi-chevron-down" style="padding-right: 4px;"></i> Xem đầy đủ</button></div>
+                  <div class="text-center pb-4 pt-2">
+                    <button class="btn btn-link shadow-none text-decoration-none p-0 d-inline-flex align-items-center" style="font-weight: 500; font-size: 15px; color: var(--btn-gold);">
+                      <i class="bi bi-chevron-down me-2" style="font-size: 14px;"></i> Xem đầy đủ
+                    </button>
+                  </div>
                 </div>
                 <div class="tab-pane fade" id="tab-toc">
                   <div class="tab-content-body" id="detail-book-toc" style="padding: 24px 16px; color: var(--text-dark); position: relative; max-height: 200px; overflow: hidden;">
@@ -233,7 +258,52 @@
                       <li>Chương 2: Hành trình</li>
                     </ul>
                   </div>
-                  <div class="text-center pb-4 pt-2"><button class="btn btn-outline-warning rounded-pill" style="font-weight: 600; padding: 6px 24px; color: var(--text-dark); border: 2px solid var(--primary); background: #fff;"><i class="bi bi-chevron-down" style="padding-right: 4px;"></i> Xem đầy đủ</button></div>
+                  <div class="text-center pb-4 pt-2">
+                    <button class="btn btn-link shadow-none text-decoration-none p-0 d-inline-flex align-items-center" style="font-weight: 500; font-size: 15px; color: var(--btn-gold);">
+                      <i class="bi bi-chevron-down me-2" style="font-size: 14px;"></i> Xem đầy đủ
+                    </button>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="tab-author">
+                  <div class="tab-content-body" id="detail-book-author" style="padding: 24px 16px; color: var(--text-dark);">
+                    <div class="d-flex flex-wrap gap-4 align-items-start">
+                      
+                      <!-- Author Item -->
+                      <div class="author-item text-center" style="width: 110px;">
+                        <div class="author-avatar-wrap mx-auto position-relative mb-2" style="width: 60px; height: 60px;">
+                          <img loading="lazy" src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=100" class="author-avatar-img w-100 h-100 rounded-circle" alt="Elizabeth Cole" style="object-fit:cover; border: 2px solid var(--primary); padding: 2px;">
+                          <i class="bi bi-check-circle-fill text-success position-absolute" style="top: -2px; right: -2px; font-size: 14px; background: #fff; border-radius: 50%; line-height: 1;"></i>
+                        </div>
+                        <div class="author-name-row" style="line-height: 1.2; margin-bottom: 4px;">
+                          <strong style="font-size: 15px;">Elizabeth Cole</strong>
+                        </div>
+                        <div class="author-role" style="color:var(--text-gray); font-size: 13px;">Chủ biên</div>
+                      </div>
+
+                      <!-- Author Item -->
+                      <div class="author-item text-center" style="width: 110px;">
+                        <div class="author-avatar-wrap mx-auto position-relative mb-2" style="width: 60px; height: 60px;">
+                          <img loading="lazy" src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=100" class="author-avatar-img w-100 h-100 rounded-circle" alt="Elizabeth Cole" style="object-fit:cover; border: 2px solid transparent; padding: 2px;">
+                        </div>
+                        <div class="author-name-row" style="line-height: 1.2; margin-bottom: 4px;">
+                          <strong style="font-size: 15px;">Adam Cole</strong>
+                        </div>
+                        <div class="author-role" style="color:var(--text-gray); font-size: 13px;">Biên dịch</div>
+                      </div>
+
+                      <!-- Author Item -->
+                      <div class="author-item text-center" style="width: 110px;">
+                        <div class="author-avatar-wrap mx-auto position-relative mb-2" style="width: 60px; height: 60px;">
+                          <img loading="lazy" src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=100" class="author-avatar-img w-100 h-100 rounded-circle" alt="Elizabeth Cole" style="object-fit:cover; border: 2px solid transparent; padding: 2px;">
+                        </div>
+                        <div class="author-name-row" style="line-height: 1.2; margin-bottom: 4px;">
+                          <strong style="font-size: 15px;">Sarah Cole</strong>
+                        </div>
+                        <div class="author-role" style="color:var(--text-gray); font-size: 13px;">Hiệu đính</div>
+                      </div>
+
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -242,13 +312,13 @@
 
             <!-- Related Books -->
             <div class="related-section mb-4">
-              <div class="section-header" style="padding: 0 20px;">
-                <h3 class="h5-title-upper"><i class="bi bi-book"></i> SÁCH CÙNG CHỦ ĐỀ</h3>
+              <div class="section-header">
+                <h3 class="h5-title-upper"><i class="bi bi-book d-none"></i> SÁCH CÙNG CHỦ ĐỀ</h3>
               </div>
               <div class="suggested-carousel-wrap position-relative">
-                <button class="btn-carousel-nav prev" style="position: absolute; left: 0px; top:38%; transform:translateY(-50%); z-index:10; border-radius:50%; width:40px; height:40px; border:1px solid var(--grayline); background:#fff; display:flex; justify-content:center; align-items:center; box-shadow:0 2px 5px rgba(0,0,0,0.1);"><i class="bi bi-chevron-left" style="line-height:0; display:flex; margin-right:2px;"></i></button>
-                <div class="books-scroll-wrap" id="related-books-grid" style="overflow-x:auto; display:flex; gap: 24px; scroll-snap-type: x mandatory; padding: 4px 0 16px 0; -ms-overflow-style:none; scrollbar-width:none;"></div>
-                <button class="btn-carousel-nav next" style="position: absolute; right: 0px; top:38%; transform:translateY(-50%); z-index:10; border-radius:50%; width:40px; height:40px; border:1px solid var(--grayline); background:#fff; display:flex; justify-content:center; align-items:center; box-shadow:0 2px 5px rgba(0,0,0,0.1);"><i class="bi bi-chevron-right" style="line-height:0; display:flex; margin-left:2px;"></i></button>
+                <button class="btn-carousel-nav prev"><i class="bi bi-chevron-left"></i></button>
+                <div class="books-scroll-wrap" id="related-books-grid"></div>
+                <button class="btn-carousel-nav next"><i class="bi bi-chevron-right"></i></button>
               </div>
             </div>
 
@@ -259,7 +329,7 @@
           <aside class="sidebar details-page-sidebar">
             <div class="vip-cta-box mb-4" style="background:#fff; border-radius:8px; padding:16px;">
               <div style="display:flex; justify-content:center; margin-bottom: 12px;">
-                <img loading="lazy" src="assets/images/vip-badge-yellow.svg" class="vip-icon-lg" alt="VIP" onerror="this.src='assets/images/vip-icon.svg'" style="max-height:80px;">
+                <img loading="lazy" src="assets/images/vip-icon.svg" class="vip-icon-lg" alt="VIP" style="max-height:80px;">
               </div>
               <p style="font-size:16px; font-weight:700; text-align:center; margin-bottom:16px; line-height:1.4; color: var(--text-dark);">Đọc toàn bộ kho sách 10,000+<br>sách điện tử, sách nói, sách<br>tương tác... trên toàn hệ thống<br>benbooks</p>
               <button class="btn-tro-thanh-hv" onclick="showWelcomeModal()" style="width:100%; border-radius:24px; padding:10px; background:var(--primary); color:var(--text-dark); font-weight:700; border:none; font-size:16px;">Trở thành hội viên</button>
@@ -274,13 +344,13 @@
   <!-- FULL WIDTH SUGGESTION BLOCK -->
   <div class="suggested-fullwidth-block" style="padding-bottom: 24px;">
     <div class="container-1440">
-      <div class="section-header mb-3" style="border-bottom: 2px solid var(--primary); padding-bottom: 8px;">
-        <h3 class="h5-title-upper text-uppercase" style="font-weight:700; margin:0; padding-left: 20px;"><i class="bi bi-stars" style="color:var(--primary)"></i> GỢI Ý CHO BẠN</h3>
+      <div class="section-header mb-3">
+        <h3 class="h5-title-upper text-uppercase" style="font-weight:700; margin:0;"><i class="bi bi-stars d-none"></i> GỢI Ý CHO BẠN</h3>
       </div>
       <div class="suggested-carousel-wrap position-relative">
-        <button class="btn-carousel-nav prev" style="position: absolute; left:0px; top:38%; transform:translateY(-50%); z-index:10; border-radius:50%; width:40px; height:40px; border:1px solid var(--grayline); background:#fff; display:flex; justify-content:center; align-items:center; box-shadow:0 2px 5px rgba(0,0,0,0.1);"><i class="bi bi-chevron-left" style="line-height:0; display:flex; margin-right:2px;"></i></button>
-        <div class="books-scroll-wrap" id="suggested-books-grid" style="overflow-x:auto; display:flex; gap: 24px; scroll-snap-type: x mandatory; padding: 4px 0 16px 0; -ms-overflow-style:none; scrollbar-width:none;"></div>
-        <button class="btn-carousel-nav next" style="position: absolute; right:0px; top:38%; transform:translateY(-50%); z-index:10; border-radius:50%; width:40px; height:40px; border:1px solid var(--grayline); background:#fff; display:flex; justify-content:center; align-items:center; box-shadow:0 2px 5px rgba(0,0,0,0.1);"><i class="bi bi-chevron-right" style="line-height:0; display:flex; margin-left:2px;"></i></button>
+        <button class="btn-carousel-nav prev"><i class="bi bi-chevron-left"></i></button>
+        <div class="books-scroll-wrap" id="suggested-books-grid"></div>
+        <button class="btn-carousel-nav next"><i class="bi bi-chevron-right"></i></button>
       </div>
     </div>
   </div>
