@@ -62,14 +62,15 @@ function validateImageUrl(url) {
 }
 
 /**
- * Syncs mobile sidebar top offset with header height.
- * Prevents clipped bottom content and extra top gap on responsive sidebar.
+ * Syncs --mobile-header-h CSS variable with the actual header element height.
+ * Uses offsetHeight (always correct regardless of scroll position).
  */
 function syncMobileSidebarOffset() {
   const header = document.getElementById('site-header');
   const isMobile = window.matchMedia('(max-width: 992px)').matches;
-  const offset = header && isMobile ? header.offsetHeight : 0;
-  document.documentElement.style.setProperty('--mobile-sidebar-top', `${offset}px`);
+  // offsetHeight = true rendered height, NOT affected by scroll
+  const headerH = header && isMobile ? header.offsetHeight : 0;
+  document.documentElement.style.setProperty('--mobile-header-h', `${headerH}px`);
 }
 
 // =============================================
@@ -78,6 +79,8 @@ function syncMobileSidebarOffset() {
 document.addEventListener('DOMContentLoaded', () => {
   bindAllEvents();
   syncMobileSidebarOffset();
+  // Re-sync after layout settles (fonts, flex-wrap may shift header height)
+  requestAnimationFrame(() => syncMobileSidebarOffset());
   // Khởi tạo trang nếu đang view thẳng bằng HTML standalone
   if (document.body.getAttribute('data-page') === 'detail') {
     const dummyBook = typeof BOOKS_DATA !== 'undefined' && BOOKS_DATA.length ? BOOKS_DATA[0] : {};
@@ -85,7 +88,9 @@ document.addEventListener('DOMContentLoaded', () => {
     try { renderRelatedBooks(dummyBook); } catch(e) { console.warn('[BenBooks] renderRelatedBooks error:', e); }
     try { renderSuggestedBooks(dummyBook); } catch(e) { console.warn('[BenBooks] renderSuggestedBooks error:', e); }
     try { renderDetailSidebar(); } catch(e) { console.warn('[BenBooks] renderDetailSidebar error:', e); }
+
   }
+  try { renderSidebar(); } catch(e) { console.warn('[BenBooks] renderSidebar error:', e); }
   // App starts on SMS screen — header/footer hidden (SPA)
   startAutoCarousel();
 });
@@ -491,6 +496,7 @@ function renderPagination(totalPages = 1) {
 function renderBookDetail(book) {
   // Cover
   const coverImg = document.getElementById('detail-cover-img');
+  const coverLink = document.getElementById('detail-cover-link');
   const coverLoading = document.getElementById('detail-cover-loading');
   const coverTag = document.getElementById('detail-cover-tag');
 
@@ -498,9 +504,16 @@ function renderBookDetail(book) {
     const coverSrc = normalizeImageUrl(book.coverImage);
     if (coverSrc) {
       coverImg.src = coverSrc;
-      // Add Fancybox attributes for main cover
-      coverImg.dataset.fancybox = "gallery";
-      coverImg.dataset.src = coverSrc;
+      if (coverLink) {
+        coverLink.href = coverSrc;
+        coverLink.dataset.fancybox = 'gallery';
+        coverLink.dataset.thumb = coverSrc;
+        coverLink.removeAttribute('data-action');
+      } else {
+        coverImg.dataset.fancybox = 'gallery';
+        coverImg.dataset.src = coverSrc;
+        coverImg.dataset.thumb = coverSrc;
+      }
       coverImg.style.cursor = "zoom-in";
       
       coverImg.classList.remove('hidden-init');
@@ -520,11 +533,17 @@ function renderBookDetail(book) {
     const coverSrc = normalizeImageUrl(book.coverImage);
     const tryIcon = normalizeImageUrl(book.type === 'Audio' ? 'assets/images/nghe-thu.svg' : 'assets/images/doc-thu.svg');
     const tryLabel = book.type === 'Audio' ? 'Nghe thử' : 'Đọc thử';
+    const galleryImages = Array.isArray(book.galleryImages) && book.galleryImages.length
+      ? book.galleryImages.map(normalizeImageUrl).filter(Boolean)
+      : [coverSrc, coverSrc, coverSrc, coverSrc];
+    const thumbsHtml = galleryImages.slice(0, 4).map((src, index) => `
+      <a class="thumb-item ${index === 0 ? 'active' : ''}" href="${src}" data-fancybox="gallery" data-thumb="${src}" style="cursor:zoom-in">
+        <img src="${src}" alt="" loading="lazy">
+      </a>`).join('');
+
     thumbs.innerHTML = `
-      <div class="thumb-item active" data-fancybox="gallery" data-src="${coverSrc}" style="cursor:zoom-in"><img src="${coverSrc}" alt="" loading="lazy"></div>
-      <div class="thumb-item" data-fancybox="gallery" data-src="${coverSrc}" style="cursor:zoom-in"><img src="${coverSrc}" alt="" loading="lazy"></div>
-      <div class="thumb-item" data-fancybox="gallery" data-src="${coverSrc}" style="cursor:zoom-in"><img src="${coverSrc}" alt="" loading="lazy"></div>
-      <div class="thumb-action-box" data-fancybox="gallery" data-src="${coverSrc}" style="cursor:zoom-in"><span>Xem thêm<br>hình ảnh</span></div>
+      ${thumbsHtml}
+      <button type="button" class="thumb-action-box" data-action="open-gallery"><span>Xem thêm<br>hình ảnh</span></button>
       <button class="thumb-action-box light-mode" data-action="read-trial" data-url="${book.readTrialUrl || '#'}"><img src="${tryIcon}" alt="${tryLabel}" loading="lazy"><span>${tryLabel}</span></button>`;
   }
 
@@ -1142,6 +1161,22 @@ function bindAllEvents() {
     if (readTrial) {
       const url = readTrial.dataset.url;
       if (url && url !== '#') window.open(url, '_blank');
+      return;
+    }
+
+    // Open gallery from thumb action button
+    const openGallery = target.closest('[data-action="open-gallery"], #detail-cover-img');
+    if (openGallery) {
+      const firstThumb = document.querySelector('#detail-thumbs-list .thumb-item');
+      if (firstThumb) firstThumb.click();
+      return;
+    }
+
+    // Keep selected thumb state in detail view
+    const thumbItem = target.closest('#detail-thumbs-list .thumb-item');
+    if (thumbItem) {
+      document.querySelectorAll('#detail-thumbs-list .thumb-item').forEach(el => el.classList.remove('active'));
+      thumbItem.classList.add('active');
       return;
     }
 
