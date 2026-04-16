@@ -55,7 +55,10 @@
           <button class="nav-link active" id="tab-combo" data-bs-toggle="tab" data-bs-target="#pane-combo" type="button" role="tab" aria-controls="pane-combo" aria-selected="true">Vinaphone</button>
         </li>
         <li class="nav-item" role="presentation">
-          <button class="nav-link" id="tab-data" data-bs-toggle="tab" data-bs-target="#pane-data" type="button" role="tab" aria-controls="pane-data" aria-selected="false">Sách bản quyền</button>
+          <button class="nav-link" id="tab-data" data-bs-toggle="tab" data-bs-target="#pane-data" type="button" role="tab" aria-controls="pane-data" aria-selected="false">Bản quyền Benito</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="tab-publisher" data-bs-toggle="tab" data-bs-target="#pane-publisher" type="button" role="tab" aria-controls="pane-publisher" aria-selected="false">Bản quyền Nhà xuất bản</button>
         </li>
         <li class="nav-item" role="presentation">
           <button class="nav-link" id="tab-content" data-bs-toggle="tab" data-bs-target="#pane-content" type="button" role="tab" aria-controls="pane-content" aria-selected="false">Gói nội dung số</button>
@@ -123,7 +126,7 @@
           </section>
         </div>
 
-        <div class="tab-pane fade" id="pane-data" role="tabpanel" aria-labelledby="tab-data" tabindex="0">
+        <div class="tab-pane fade pane-data-scope" id="pane-data" role="tabpanel" aria-labelledby="tab-data" tabindex="0">
           <section class="data-tab-hero mb-4">
             <div class="data-tab-hero-head text-center">
               <span class="data-tab-vip"><img loading="lazy" src="assets/images/vip-icon.svg" alt="VIP"></span>
@@ -166,9 +169,68 @@
                 <p class="data-card-note">Đọc/nghe toàn bộ sách khối THCS của Benito trên website.</p>
                 <button type="button" class="btn-pricing-cta btn-buy-package" data-package="THCS2Y" data-price="349.000₫" data-period="02 năm">MUA GÓI</button>
               </article>
+              <article class="pricing-card data-tab-card data-tab-card-main">
+                <div class="data-card-logo"><img loading="lazy" src="assets/images/logo-benito.svg" alt="Benito" onerror="this.closest('.data-card-logo').style.display='none'"></div>
+                <h3>Benbook THCS (90 ngày)</h3>
+                <p class="pricing-price">299.000₫</p>
+                <p class="data-card-note">Đọc/nghe toàn bộ sách khối THCS của Benito trên website.</p>
+                <button type="button" class="btn-pricing-cta btn-buy-package" data-package="THCS90" data-price="299.000₫" data-period="90 ngày">MUA GÓI</button>
+              </article>
+              <article class="pricing-card data-tab-card data-tab-card-main">
+                <div class="data-card-logo"><img loading="lazy" src="assets/images/logo-benito.svg" alt="Benito" onerror="this.closest('.data-card-logo').style.display='none'"></div>
+                <h3>Benbook Tiểu học (02 năm)</h3>
+                <p class="pricing-price">299.000₫</p>
+                <p class="data-card-note">Đọc/nghe toàn bộ sách khối Tiểu học của Benito trên website.</p>
+                <button type="button" class="btn-pricing-cta btn-buy-package" data-package="TH2Y299" data-price="299.000₫" data-period="02 năm">MUA GÓI</button>
+              </article>
+              <article class="pricing-card data-tab-card data-tab-card-main">
+                <div class="data-card-logo"><img loading="lazy" src="assets/images/logo-benito.svg" alt="Benito" onerror="this.closest('.data-card-logo').style.display='none'"></div>
+                <h3>Benbook Tiểu học (02 năm)</h3>
+                <p class="pricing-price">349.000₫</p>
+                <p class="data-card-note">Đọc/nghe toàn bộ sách khối Tiểu học của Benito trên website.</p>
+                <button type="button" class="btn-pricing-cta btn-buy-package" data-package="TH2Y349" data-price="349.000₫" data-period="02 năm">MUA GÓI</button>
+              </article>
             </div>
           </section>
 
+          <section class="data-benefits-wrap mb-4">
+            <div class="data-benefits-head text-center">
+              <h3>
+                <span class="data-benefits-title-main">Lý do đăng ký gói</span>
+                <span class="data-benefits-title-highlight">thành viên Benito?</span>
+              </h3>
+            </div>
+            <div class="data-benefits-grid">
+              <article class="data-benefit-card">
+                <span class="data-benefit-icon"><i class="bi bi-journal-bookmark"></i></span>
+                <h4>Sử dụng cơ sở dữ liệu chuyên ngành</h4>
+                <p>Truy cập kho sách bản quyền theo từng lĩnh vực, cập nhật liên tục theo chuyên ngành.</p>
+              </article>
+              <article class="data-benefit-card">
+                <span class="data-benefit-icon"><i class="bi bi-globe2"></i></span>
+                <h4>Đọc mọi lúc mọi nơi</h4>
+                <p>Đồng bộ tài khoản trên nhiều thiết bị, đọc/nghe liền mạch dù đổi nền tảng.</p>
+              </article>
+              <article class="data-benefit-card">
+                <span class="data-benefit-icon"><i class="bi bi-link-45deg"></i></span>
+                <h4>Công nghệ liên tục nâng cấp</h4>
+                <p>Hệ thống tối ưu hiệu năng định kỳ để trải nghiệm đọc/nghe luôn ổn định và mượt.</p>
+              </article>
+              <article class="data-benefit-card">
+                <span class="data-benefit-icon"><i class="bi bi-shield-lock"></i></span>
+                <h4>Bảo mật dữ liệu</h4>
+                <p>Thông tin tài khoản và lịch sử sử dụng được bảo vệ theo tiêu chuẩn bảo mật hiện đại.</p>
+              </article>
+              <article class="data-benefit-card">
+                <span class="data-benefit-icon"><i class="bi bi-laptop"></i></span>
+                <h4>Trải nghiệm đọc như sách giấy</h4>
+                <p>Giao diện thân thiện, tập trung vào nội dung để tăng hiệu quả học tập và nghiên cứu.</p>
+              </article>
+            </div>
+          </section>
+        </div>
+
+        <div class="tab-pane fade pane-data-scope" id="pane-publisher" role="tabpanel" aria-labelledby="tab-publisher" tabindex="0">
           <section class="data-tab-group mb-4">
             <div class="data-tab-group-head text-center">
               <h3>Gói cơ sở dữ liệu điện tử - Nhà xuất bản Y Học</h3>
@@ -336,7 +398,7 @@
           const price = btn.getAttribute('data-price');
           const period = btn.getAttribute('data-period');
 
-          const isCopyrightTab = !!btn.closest('#pane-data');
+          const isCopyrightTab = !!btn.closest('.pane-data-scope');
           if (isCopyrightTab) {
             const target = `checkout.html?pkg=${encodeURIComponent(pkg || '')}&price=${encodeURIComponent(price || '')}&period=${encodeURIComponent(period || '')}`;
             window.location.href = target;

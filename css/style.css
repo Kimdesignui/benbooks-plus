@@ -1,6 +1,6 @@
-/* =============================================
-   BENBOOKS PLUS ?f��??s��?,?� DESIGN SYSTEM & STYLES
-   6-Step Flow: SMS ?f��?,?��?,??"? Homepage ?f��?,?��?,??"? Login ?f��?,?��?,??"? Welcome ?f��?,?��?,??"? Library ?f��?,?��?,??"? Detail
+﻿/* =============================================
+   BENBOOKS PLUS ?fï¿½ï¿½??sï¿½ï¿½?,?ï¿½ DESIGN SYSTEM & STYLES
+   6-Step Flow: SMS ?fï¿½ï¿½?,?ï¿½ï¿½?,??"? Homepage ?fï¿½ï¿½?,?ï¿½ï¿½?,??"? Login ?fï¿½ï¿½?,?ï¿½ï¿½?,??"? Welcome ?fï¿½ï¿½?,?ï¿½ï¿½?,??"? Library ?fï¿½ï¿½?,?ï¿½ï¿½?,??"? Detail
    ============================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
@@ -97,7 +97,7 @@ button {
 
 
 /* =============================================
-   3. TYPOGRAPHY (Figma Font Styles Manager ?f��??s��?,?� 16 styles)
+   3. TYPOGRAPHY (Figma Font Styles Manager ?fï¿½ï¿½??sï¿½ï¿½?,?ï¿½ 16 styles)
    ============================================= */
 /* H1 - Booktitle - 26pt - B */
 .h1-title,
@@ -1461,7 +1461,7 @@ button {
   gap: 24px;
 }
 
-/* Detail page sidebar ?f��??s��?,?� compact version */
+/* Detail page sidebar ?fï¿½ï¿½??sï¿½ï¿½?,?ï¿½ compact version */
 .details-page-sidebar {
   max-height: none !important;
   position: sticky;
@@ -3147,7 +3147,7 @@ body.sidebar-open {
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior: contain;
-    /* offsetHeight measured at click time via syncMobileSidebarOffset() — always correct */
+    /* offsetHeight measured at click time via syncMobileSidebarOffset() â€” always correct */
     padding: var(--mobile-header-h, 138px) 0 24px 0;
     max-height: 100dvh;
   }
@@ -4551,14 +4551,14 @@ body.sidebar-open .sidebar {
 /* =============================================
    23. TAB 2 PRICING LAYOUT
    ============================================= */
-#pane-data .data-tab-hero {
+.pane-data-scope .data-tab-hero {
   border-radius: 18px;
   padding: 26px 22px 24px;
   background: radial-gradient(120% 90% at 50% 0%, #ff7d2f 0%, #ff4a1f 45%, #ef1d1d 100%);
   box-shadow: 0 10px 30px rgba(216, 40, 10, 0.25);
 }
 
-#pane-data .data-tab-hero-head h2 {
+.pane-data-scope .data-tab-hero-head h2 {
   color: #fff;
   text-transform: uppercase;
   font-weight: 800;
@@ -4566,13 +4566,13 @@ body.sidebar-open .sidebar {
   margin-bottom: 10px;
 }
 
-#pane-data .data-tab-hero-head p {
+.pane-data-scope .data-tab-hero-head p {
   color: rgba(255, 255, 255, 0.9);
   max-width: 800px;
   margin: 0 auto 16px;
 }
 
-#pane-data .data-tab-vip {
+.pane-data-scope .data-tab-vip {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -4581,28 +4581,41 @@ body.sidebar-open .sidebar {
   margin-bottom: 10px;
 }
 
-#pane-data .data-tab-vip img {
+.pane-data-scope .data-tab-vip img {
   width: 50px;
   height: 50px;
   object-fit: contain;
 }
 
-#pane-data .data-tab-grid {
+.pane-data-scope .data-tab-grid {
   display: grid;
   gap: 16px;
   grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
-#pane-data .data-tab-grid-5 {
+/* Benito tab only: center incomplete second row (8 cards -> 5 + 3) */
+#pane-data .data-tab-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+#pane-data .data-tab-grid > .data-tab-card {
+  flex: 0 0 calc((100% - 64px) / 5);
+  max-width: calc((100% - 64px) / 5);
+}
+
+.pane-data-scope .data-tab-grid-5 {
   grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
-#pane-data .data-tab-card {
+.pane-data-scope .data-tab-card {
   padding: 32px 16px;
   border-radius: 12px;
 }
 
-#pane-data .data-tab-card-main {
+.pane-data-scope .data-tab-card-main {
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -4611,11 +4624,11 @@ body.sidebar-open .sidebar {
   min-height: 100%;
 }
 
-#pane-data .data-tab-card-main .pricing-chip {
+.pane-data-scope .data-tab-card-main .pricing-chip {
   display: none;
 }
 
-#pane-data .data-card-logo {
+.pane-data-scope .data-card-logo {
   height: 48px;
   margin-bottom: 8px;
   display: flex;
@@ -4623,7 +4636,7 @@ body.sidebar-open .sidebar {
   justify-content: center;
 }
 
-#pane-data .data-card-logo img {
+.pane-data-scope .data-card-logo img {
   max-height: 48px;
   max-width: 170px;
   width: auto;
@@ -4631,21 +4644,21 @@ body.sidebar-open .sidebar {
   object-fit: contain;
 }
 
-#pane-data .data-tab-card h3 {
+.pane-data-scope .data-tab-card h3 {
   margin-bottom: 8px;
 }
 
-#pane-data .data-tab-card-main h3 {
+.pane-data-scope .data-tab-card-main h3 {
   font-size: 22px;
   line-height: 1.2;
 }
 
-#pane-data .data-tab-card .pricing-price {
+.pane-data-scope .data-tab-card .pricing-price {
   font-size: 34px;
   margin-bottom: 8px;
 }
 
-#pane-data .data-tab-card-main .pricing-price {
+.pane-data-scope .data-tab-card-main .pricing-price {
   color: #ff4a1f;
   margin-top: auto;
   margin-bottom: 12px;
@@ -4653,48 +4666,48 @@ body.sidebar-open .sidebar {
   font-weight: 900;
 }
 
-#pane-data .data-card-note {
+.pane-data-scope .data-card-note {
   margin: 0 0 12px;
   color: #666;
   min-height: 38px;
 }
 
-#pane-data .data-tab-card-main .data-card-note {
+.pane-data-scope .data-tab-card-main .data-card-note {
   color: #222;
   max-width: 250px;
 }
 
-#pane-data .data-tab-card-main .btn-pricing-cta {
+.pane-data-scope .data-tab-card-main .btn-pricing-cta {
   background: #ff4a1f;
   color: #fff;
 }
 
-#pane-data .data-tab-card-main .btn-pricing-cta:hover {
+.pane-data-scope .data-tab-card-main .btn-pricing-cta:hover {
   background: #ef3f14;
   color: #fff;
 }
 
-#pane-data .data-tab-group {
+.pane-data-scope .data-tab-group {
   background: rgba(255, 255, 255, 0.82);
   border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 16px;
   padding: 64px 20px;
 }
 
-#pane-data .data-tab-group-head h3 {
+.pane-data-scope .data-tab-group-head h3 {
   font-size: 24px;
   font-weight: 800;
   text-transform: uppercase;
   margin-bottom: 8px;
 }
 
-#pane-data .data-tab-group-head p {
+.pane-data-scope .data-tab-group-head p {
   font-size: 15px;
   color: #666;
   margin-bottom: 18px;
 }
 
-#pane-data .data-benefits-wrap {
+.pane-data-scope .data-benefits-wrap {
   background:
     radial-gradient(circle at 10% 15%, rgba(255, 203, 74, 0.2) 0, rgba(255, 203, 74, 0) 40%),
     radial-gradient(circle at 92% 12%, rgba(255, 203, 74, 0.16) 0, rgba(255, 203, 74, 0) 35%),
@@ -4704,36 +4717,36 @@ body.sidebar-open .sidebar {
   padding: 56px 26px 36px;
 }
 
-#pane-data .data-benefits-head h3 {
+.pane-data-scope .data-benefits-head h3 {
   margin: 0 0 26px;
   text-transform: uppercase;
   line-height: 1.2;
 }
 
-#pane-data .data-benefits-title-main,
-#pane-data .data-benefits-title-highlight {
+.pane-data-scope .data-benefits-title-main,
+.pane-data-scope .data-benefits-title-highlight {
   display: block;
 }
 
-#pane-data .data-benefits-title-main {
+.pane-data-scope .data-benefits-title-main {
   font-size: 32px;
   font-weight: 900;
   color: #2a2a2a;
 }
 
-#pane-data .data-benefits-title-highlight {
+.pane-data-scope .data-benefits-title-highlight {
   font-size: 40px;
   font-weight: 900;
   color: #e79400;
 }
 
-#pane-data .data-benefits-grid {
+.pane-data-scope .data-benefits-grid {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 16px;
 }
 
-#pane-data .data-benefit-card {
+.pane-data-scope .data-benefit-card {
   background: #fff;
   border: 1px solid rgba(235, 198, 121, 0.5);
   border-radius: 20px;
@@ -4742,7 +4755,7 @@ body.sidebar-open .sidebar {
   box-shadow: 0 10px 24px rgba(190, 145, 55, 0.08);
 }
 
-#pane-data .data-benefit-icon {
+.pane-data-scope .data-benefit-icon {
   width: 70px;
   height: 70px;
   border-radius: 50%;
@@ -4755,7 +4768,7 @@ body.sidebar-open .sidebar {
   margin-bottom: 14px;
 }
 
-#pane-data .data-benefit-card h4 {
+.pane-data-scope .data-benefit-card h4 {
   font-size: 20px;
   font-weight: 800;
   margin-bottom: 10px;
@@ -4763,7 +4776,7 @@ body.sidebar-open .sidebar {
   line-height: 1.32;
 }
 
-#pane-data .data-benefit-card p {
+.pane-data-scope .data-benefit-card p {
   margin: 0;
   color: #5f5f5f;
   font-size: 16px;
@@ -4771,36 +4784,46 @@ body.sidebar-open .sidebar {
 }
 
 @media (max-width: 1399px) {
-  #pane-data .data-tab-grid,
-  #pane-data .data-tab-grid-5 {
+  .pane-data-scope .data-tab-grid,
+  .pane-data-scope .data-tab-grid-5 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  #pane-data .data-tab-grid > .data-tab-card {
+    flex-basis: calc((100% - 48px) / 4);
+    max-width: calc((100% - 48px) / 4);
   }
 }
 
 @media (max-width: 1199px) {
-  #pane-data .data-tab-grid,
-  #pane-data .data-tab-grid-5 {
+  .pane-data-scope .data-tab-grid,
+  .pane-data-scope .data-tab-grid-5 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  #pane-data .data-benefits-grid {
+  .pane-data-scope .data-benefits-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  #pane-data .data-benefits-title-main {
+  #pane-data .data-tab-grid > .data-tab-card {
+    flex-basis: calc((100% - 32px) / 3);
+    max-width: calc((100% - 32px) / 3);
+  }
+
+  .pane-data-scope .data-benefits-title-main {
     font-size: 28px;
   }
 
-  #pane-data .data-benefits-title-highlight {
+  .pane-data-scope .data-benefits-title-highlight {
     font-size: 34px;
   }
 
-  #pane-data .data-tab-hero-head h2,
-  #pane-data .data-tab-group-head h3 {
+  .pane-data-scope .data-tab-hero-head h2,
+  .pane-data-scope .data-tab-group-head h3 {
     font-size: 21px;
   }
 
-  #pane-data .data-tab-card-main h3 {
+  .pane-data-scope .data-tab-card-main h3 {
     font-size: 20px;
   }
 }
@@ -4822,60 +4845,69 @@ body.sidebar-open .sidebar {
     min-width: 170px;
   }
 
-  #pane-data .data-tab-grid,
-  #pane-data .data-tab-grid-5 {
+  .pane-data-scope .data-tab-grid,
+  .pane-data-scope .data-tab-grid-5 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
   }
 
-  #pane-data .data-tab-hero,
-  #pane-data .data-tab-group {
+  #pane-data .data-tab-grid {
+    gap: 12px;
+  }
+
+  #pane-data .data-tab-grid > .data-tab-card {
+    flex-basis: calc((100% - 12px) / 2);
+    max-width: calc((100% - 12px) / 2);
+  }
+
+  .pane-data-scope .data-tab-hero,
+  .pane-data-scope .data-tab-group {
     padding: 16px;
   }
 
-  #pane-data .data-tab-hero-head h2,
-  #pane-data .data-tab-group-head h3 {
+  .pane-data-scope .data-tab-hero-head h2,
+  .pane-data-scope .data-tab-group-head h3 {
     font-size: 18px;
   }
 
-  #pane-data .data-tab-card .pricing-price {
+  .pane-data-scope .data-tab-card .pricing-price {
     font-size: 28px;
   }
 
-  #pane-data .data-tab-card-main .data-card-note {
+  .pane-data-scope .data-tab-card-main .data-card-note {
     min-height: auto;
   }
 
-  #pane-data .data-benefits-wrap {
+  .pane-data-scope .data-benefits-wrap {
     padding: 28px 16px 20px;
   }
 
-  #pane-data .data-benefits-grid {
+  .pane-data-scope .data-benefits-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
   }
 
-  #pane-data .data-benefits-head h3 {
+  .pane-data-scope .data-benefits-head h3 {
     margin-bottom: 16px;
   }
 
-  #pane-data .data-benefits-title-main {
+  .pane-data-scope .data-benefits-title-main {
     font-size: 22px;
   }
 
-  #pane-data .data-benefits-title-highlight {
+  .pane-data-scope .data-benefits-title-highlight {
     font-size: 26px;
   }
 
-  #pane-data .data-benefit-card h4 {
+  .pane-data-scope .data-benefit-card h4 {
     font-size: 18px;
   }
 
-  #pane-data .data-benefit-card p {
+  .pane-data-scope .data-benefit-card p {
     font-size: 15px;
   }
 
-  #pane-data .data-benefit-icon {
+  .pane-data-scope .data-benefit-icon {
     width: 62px;
     height: 62px;
     font-size: 28px;
@@ -4883,12 +4915,17 @@ body.sidebar-open .sidebar {
 }
 
 @media (max-width: 480px) {
-  #pane-data .data-tab-grid,
-  #pane-data .data-tab-grid-5 {
+  .pane-data-scope .data-tab-grid,
+  .pane-data-scope .data-tab-grid-5 {
     grid-template-columns: 1fr;
   }
 
-  #pane-data .data-benefits-grid {
+  #pane-data .data-tab-grid > .data-tab-card {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+
+  .pane-data-scope .data-benefits-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -5625,3 +5662,4 @@ body.sidebar-open .sidebar {
     font-size: 17px;
   }
 }
+
