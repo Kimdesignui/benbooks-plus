@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
@@ -39,9 +39,7 @@
   </header>
 
   <main class="pricing-page py-5">
-    <!-- Mobile Sidebar -->
     <aside class="sidebar d-lg-none" id="sidebar-content"></aside>
-    <!-- Mobile Sidebar Overlay -->
     <div class="sidebar-overlay d-lg-none" id="sidebar-overlay"></div>
     <div class="container-1440">
       <section class="pricing-hero mb-4">
@@ -52,74 +50,225 @@
         <p>Khám phá kho sách bản quyền không giới hạn cùng BenBooks Data. Lựa chọn gói hội viên phù hợp để trải nghiệm trọn vẹn kho tri thức số đa dạng, mọi lúc mọi nơi ngay trên thiết bị di động của bạn.</p>
       </section>
 
-      <section class="row g-4 mb-5">
-        <div class="col-lg-3 col-md-6">
-          <article class="pricing-card h-100">
-            <span class="pricing-chip">Gói ngày</span>
-            <h3>BBS6</h3>
-            <p class="pricing-price">6.000đ <small>/ ngày</small></p>
-            <ul>
-              <li><i class="bi bi-check2-circle"></i> 500MB Data tốc độ cao (hết lưu lượng thì dừng truy cập hoặc chuyển sang gói Data khác đang dùng).</li>
-              <li><i class="bi bi-check2-circle"></i> 01 License BenBooks Cơ bản: truy cập không giới hạn kho ebook, audio book cơ bản.</li>
-              <li><i class="bi bi-check2-circle"></i> Giá cước: 6.000đ / ngày.</li>
-            </ul>
-            <button type="button" class="btn-pricing-cta btn-buy-package" data-package="BBS6" data-price="6.000đ" data-period="1 ngày">MUA GÓI</button>
-          </article>
+      <ul class="nav nav-tabs mb-4" id="pricingTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="tab-combo" data-bs-toggle="tab" data-bs-target="#pane-combo" type="button" role="tab" aria-controls="pane-combo" aria-selected="true">Vinaphone</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="tab-data" data-bs-toggle="tab" data-bs-target="#pane-data" type="button" role="tab" aria-controls="pane-data" aria-selected="false">Sách bản quyền</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="tab-content" data-bs-toggle="tab" data-bs-target="#pane-content" type="button" role="tab" aria-controls="pane-content" aria-selected="false">Gói nội dung số</button>
+        </li>
+      </ul>
+
+      <div class="tab-content" id="pricingTabsContent">
+        <div class="tab-pane fade show active" id="pane-combo" role="tabpanel" aria-labelledby="tab-combo" tabindex="0">
+          <section class="row g-4 mb-5">
+            <div class="col-lg-3 col-md-6">
+              <article class="pricing-card h-100">
+                <span class="pricing-chip">Gói ngày</span>
+                <h3>BBS6</h3>
+                <p class="pricing-price">6.000₫ <small>/ ngày</small></p>
+                <ul>
+                  <li><i class="bi bi-check2-circle"></i> 500MB Data tốc độ cao (hết lưu lượng thì dừng truy cập hoặc chuyển sang gói Data khác đang dùng).</li>
+                  <li><i class="bi bi-check2-circle"></i> 01 License BenBooks Cơ bản: truy cập không giới hạn kho ebook, audio book cơ bản.</li>
+                  <li><i class="bi bi-check2-circle"></i> Giá cước: 6.000₫ / ngày.</li>
+                </ul>
+                <button type="button" class="btn-pricing-cta btn-buy-package" data-package="BBS6" data-price="6.000₫" data-period="1 ngày">MUA GÓI</button>
+              </article>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+              <article class="pricing-card pricing-card-featured h-100">
+                <span class="pricing-chip">Gói ngày VIP</span>
+                <h3>BBS9</h3>
+                <p class="pricing-price">9.000₫ <small>/ ngày</small></p>
+                <ul>
+                  <li><i class="bi bi-check2-circle"></i> 1GB Data tốc độ cao (hết lưu lượng thì dừng truy cập hoặc chuyển sang gói Data khác đang dùng).</li>
+                  <li><i class="bi bi-check2-circle"></i> 01 License BenBooks Cơ bản + quyền lợi toàn bộ nội dung BenBooks (cơ bản + VIP).</li>
+                  <li><i class="bi bi-check2-circle"></i> Giá cước: 9.000₫ / ngày.</li>
+                </ul>
+                <button type="button" class="btn-pricing-cta btn-buy-package" data-package="BBS9" data-price="9.000₫" data-period="1 ngày">MUA GÓI</button>
+              </article>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+              <article class="pricing-card h-100">
+                <span class="pricing-chip">Gói tuần VIP</span>
+                <h3>BBS40</h3>
+                <p class="pricing-price">40.000₫ <small>/ tuần</small></p>
+                <ul>
+                  <li><i class="bi bi-check2-circle"></i> 4GB Data tốc độ cao (hết lưu lượng thì dừng truy cập hoặc chuyển sang gói Data khác đang dùng).</li>
+                  <li><i class="bi bi-check2-circle"></i> 01 License BenBooks Cơ bản + quyền lợi toàn bộ nội dung BenBooks (cơ bản + VIP).</li>
+                  <li><i class="bi bi-check2-circle"></i> Giá cước: 40.000₫ / 7 ngày.</li>
+                </ul>
+                <button type="button" class="btn-pricing-cta btn-buy-package" data-package="BBS40" data-price="40.000₫" data-period="7 ngày">MUA GÓI</button>
+              </article>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+              <article class="pricing-card h-100">
+                <span class="pricing-chip">Gói tháng VIP</span>
+                <h3>BBS90</h3>
+                <p class="pricing-price">90.000₫ <small>/ tháng</small></p>
+                <ul>
+                  <li><i class="bi bi-check2-circle"></i> 8GB Data tốc độ cao (hết lưu lượng thì dừng truy cập hoặc chuyển sang gói Data khác đang dùng).</li>
+                  <li><i class="bi bi-check2-circle"></i> 01 License BenBooks Cơ bản + quyền lợi toàn bộ nội dung BenBooks (cơ bản + VIP).</li>
+                  <li><i class="bi bi-check2-circle"></i> Giá cước: 90.000₫ / 30 ngày.</li>
+                </ul>
+                <button type="button" class="btn-pricing-cta btn-buy-package" data-package="BBS90" data-price="90.000₫" data-period="30 ngày">MUA GÓI</button>
+              </article>
+            </div>
+          </section>
         </div>
 
-        <div class="col-lg-3 col-md-6">
-          <article class="pricing-card pricing-card-featured h-100">
-            <span class="pricing-chip">Gói ngày VIP</span>
-            <h3>BBS9</h3>
-            <p class="pricing-price">9.000đ <small>/ ngày</small></p>
-            <ul>
-              <li><i class="bi bi-check2-circle"></i> 1GB Data tốc độ cao (hết lưu lượng thì dừng truy cập hoặc chuyển sang gói Data khác đang dùng).</li>
-              <li><i class="bi bi-check2-circle"></i> 01 License BenBooks Cơ bản + quyền lợi toàn bộ nội dung BenBooks (cơ bản + VIP).</li>
-              <li><i class="bi bi-check2-circle"></i> Giá cước: 9.000đ / ngày.</li>
-            </ul>
-            <button type="button" class="btn-pricing-cta btn-buy-package" data-package="BBS9" data-price="9.000đ" data-period="1 ngày">MUA GÓI</button>
-          </article>
+        <div class="tab-pane fade" id="pane-data" role="tabpanel" aria-labelledby="tab-data" tabindex="0">
+          <section class="data-tab-hero mb-4">
+            <div class="data-tab-hero-head text-center">
+              <span class="data-tab-vip"><img loading="lazy" src="assets/images/vip-icon.svg" alt="VIP"></span>
+              <h2>Lựa chọn đọc sách điện tử không giới hạn</h2>
+              <p>Chọn nhóm gói phù hợp theo nhu cầu sử dụng. Vẫn giữ cơ chế đăng ký/gia hạn nhanh qua SMS như các gói hiện tại.</p>
+            </div>
+            <div class="data-tab-grid">
+              <article class="pricing-card data-tab-card data-tab-card-main">
+                <div class="data-card-logo"><img loading="lazy" src="assets/images/logo-benito.svg" alt="Benito" onerror="this.closest('.data-card-logo').style.display='none'"></div>
+                <h3>Benbook tổng hợp (90 ngày)</h3>
+                <p class="pricing-price">349.000₫</p>
+                <p class="data-card-note">Đọc/nghe toàn bộ sách bản quyền Benito trên website.</p>
+                <button type="button" class="btn-pricing-cta btn-buy-package" data-package="BEN90" data-price="349.000₫" data-period="90 ngày">MUA GÓI</button>
+              </article>
+              <article class="pricing-card data-tab-card data-tab-card-main">
+                <div class="data-card-logo"><img loading="lazy" src="assets/images/logo-benito.svg" alt="Benito" onerror="this.closest('.data-card-logo').style.display='none'"></div>
+                <h3>Benbook tổng hợp (02 năm)</h3>
+                <p class="pricing-price">499.000₫</p>
+                <p class="data-card-note">Đọc/nghe toàn bộ sách bản quyền Benito trên website.</p>
+                <button type="button" class="btn-pricing-cta btn-buy-package" data-package="BEN365" data-price="499.000₫" data-period="12 tháng">MUA GÓI</button>
+              </article>
+              <article class="pricing-card data-tab-card data-tab-card-main">
+                <div class="data-card-logo"><img loading="lazy" src="assets/images/logo-benito.svg" alt="Benito" onerror="this.closest('.data-card-logo').style.display='none'"></div>
+                <h3>Benbook THPT (90 ngày)</h3>
+                <p class="pricing-price">299.000₫</p>
+                <p class="data-card-note">Đọc/nghe toàn bộ sách khối THPT của Benito trên website.</p>
+                <button type="button" class="btn-pricing-cta btn-buy-package" data-package="THPT90" data-price="299.000₫" data-period="90 ngày">MUA GÓI</button>
+              </article>
+              <article class="pricing-card data-tab-card data-tab-card-main">
+                <div class="data-card-logo"><img loading="lazy" src="assets/images/logo-benito.svg" alt="Benito" onerror="this.closest('.data-card-logo').style.display='none'"></div>
+                <h3>Benbook THPT (02 năm)</h3>
+                <p class="pricing-price">349.000₫</p>
+                <p class="data-card-note">Đọc/nghe toàn bộ sách khối THPT của Benito trên website.</p>
+                <button type="button" class="btn-pricing-cta btn-buy-package" data-package="THPT365" data-price="349.000₫" data-period="12 tháng">MUA GÓI</button>
+              </article>
+              <article class="pricing-card data-tab-card data-tab-card-main">
+                <div class="data-card-logo"><img loading="lazy" src="assets/images/logo-benito.svg" alt="Benito" onerror="this.closest('.data-card-logo').style.display='none'"></div>
+                <h3>Benbook THCS (02 năm)</h3>
+                <p class="pricing-price">349.000₫</p>
+                <p class="data-card-note">Đọc/nghe toàn bộ sách khối THCS của Benito trên website.</p>
+                <button type="button" class="btn-pricing-cta btn-buy-package" data-package="THCS2Y" data-price="349.000₫" data-period="02 năm">MUA GÓI</button>
+              </article>
+            </div>
+          </section>
+
+          <section class="data-tab-group mb-4">
+            <div class="data-tab-group-head text-center">
+              <h3>Gói cơ sở dữ liệu điện tử - Nhà xuất bản Y Học</h3>
+              <p>Khi nâng cấp tài khoản thành viên với gói cơ sở dữ liệu điện tử Nhà xuất bản Y học.</p>
+            </div>
+            <div class="data-tab-grid data-tab-grid-5">
+              <article class="pricing-card data-tab-card data-tab-card-main"><div class="data-card-logo"><img loading="lazy" src="assets/images/logo-nxbyhoc.svg" alt="NXB Y Học" onerror="this.closest('.data-card-logo').style.display='none'"></div><h3>NXB Y Học - 10 Ngày</h3><p class="data-card-note">10 ngày đọc/nghe toàn bộ sách của NXB Y học.</p><p class="pricing-price">50.000₫</p><button type="button" class="btn-pricing-cta btn-buy-package" data-package="YHOC10N" data-price="50.000₫" data-period="10 ngày">MUA GÓI</button></article>
+              <article class="pricing-card data-tab-card data-tab-card-main"><div class="data-card-logo"><img loading="lazy" src="assets/images/logo-nxbyhoc.svg" alt="NXB Y Học" onerror="this.closest('.data-card-logo').style.display='none'"></div><h3>NXB Y Học - 1 Tháng</h3><p class="data-card-note">30 ngày đọc/nghe toàn bộ sách của NXB Y học.</p><p class="pricing-price">150.000₫</p><button type="button" class="btn-pricing-cta btn-buy-package" data-package="YHOC1T" data-price="150.000₫" data-period="1 tháng">MUA GÓI</button></article>
+              <article class="pricing-card data-tab-card data-tab-card-main"><div class="data-card-logo"><img loading="lazy" src="assets/images/logo-nxbyhoc.svg" alt="NXB Y Học" onerror="this.closest('.data-card-logo').style.display='none'"></div><h3>NXB Y Học - 3 Tháng</h3><p class="data-card-note">90 ngày đọc/nghe toàn bộ sách của NXB Y học.</p><p class="pricing-price">350.000₫</p><button type="button" class="btn-pricing-cta btn-buy-package" data-package="YHOC3T" data-price="350.000₫" data-period="3 tháng">MUA GÓI</button></article>
+              <article class="pricing-card data-tab-card data-tab-card-main"><div class="data-card-logo"><img loading="lazy" src="assets/images/logo-nxbyhoc.svg" alt="NXB Y Học" onerror="this.closest('.data-card-logo').style.display='none'"></div><h3>NXB Y Học - 6 Tháng</h3><p class="data-card-note">180 ngày đọc/nghe toàn bộ sách của NXB Y học.</p><p class="pricing-price">650.000₫</p><button type="button" class="btn-pricing-cta btn-buy-package" data-package="YHOC6T" data-price="650.000₫" data-period="6 tháng">MUA GÓI</button></article>
+              <article class="pricing-card data-tab-card data-tab-card-main"><div class="data-card-logo"><img loading="lazy" src="assets/images/logo-nxbyhoc.svg" alt="NXB Y Học" onerror="this.closest('.data-card-logo').style.display='none'"></div><h3>NXB Y Học - 12 Tháng</h3><p class="data-card-note">365 ngày đọc/nghe toàn bộ sách của NXB Y học.</p><p class="pricing-price">1.200.000₫</p><button type="button" class="btn-pricing-cta btn-buy-package" data-package="YHOC12T" data-price="1.200.000₫" data-period="12 tháng">MUA GÓI</button></article>
+            </div>
+          </section>
+
+          <section class="data-tab-group mb-4">
+            <div class="data-tab-group-head text-center">
+              <h3>Gói cơ sở dữ liệu điện tử - Nhà xuất bản Xây Dựng</h3>
+              <p>Dành cho nhu cầu truy cập chuyên sâu tài liệu kỹ thuật ngành xây dựng.</p>
+            </div>
+            <div class="data-tab-grid data-tab-grid-5">
+              <article class="pricing-card data-tab-card data-tab-card-main"><div class="data-card-logo"><img loading="lazy" src="assets/images/logo-nxbxaydung.svg" alt="NXB Xây Dựng" onerror="this.closest('.data-card-logo').style.display='none'"></div><h3>NXB Xây Dựng - 10 Ngày</h3><p class="data-card-note">10 ngày đọc/nghe toàn bộ sách của NXB Xây Dựng.</p><p class="pricing-price">50.000₫</p><button type="button" class="btn-pricing-cta btn-buy-package" data-package="XD10N" data-price="50.000₫" data-period="10 ngày">MUA GÓI</button></article>
+              <article class="pricing-card data-tab-card data-tab-card-main"><div class="data-card-logo"><img loading="lazy" src="assets/images/logo-nxbxaydung.svg" alt="NXB Xây Dựng" onerror="this.closest('.data-card-logo').style.display='none'"></div><h3>NXB Xây Dựng - 1 Tháng</h3><p class="data-card-note">30 ngày đọc/nghe toàn bộ sách của NXB Xây Dựng.</p><p class="pricing-price">150.000₫</p><button type="button" class="btn-pricing-cta btn-buy-package" data-package="XD1T" data-price="150.000₫" data-period="1 tháng">MUA GÓI</button></article>
+              <article class="pricing-card data-tab-card data-tab-card-main"><div class="data-card-logo"><img loading="lazy" src="assets/images/logo-nxbxaydung.svg" alt="NXB Xây Dựng" onerror="this.closest('.data-card-logo').style.display='none'"></div><h3>NXB Xây Dựng - 3 Tháng</h3><p class="data-card-note">90 ngày đọc/nghe toàn bộ sách của NXB Xây Dựng.</p><p class="pricing-price">350.000₫</p><button type="button" class="btn-pricing-cta btn-buy-package" data-package="XD3T" data-price="350.000₫" data-period="3 tháng">MUA GÓI</button></article>
+              <article class="pricing-card data-tab-card data-tab-card-main"><div class="data-card-logo"><img loading="lazy" src="assets/images/logo-nxbxaydung.svg" alt="NXB Xây Dựng" onerror="this.closest('.data-card-logo').style.display='none'"></div><h3>NXB Xây Dựng - 6 Tháng</h3><p class="data-card-note">180 ngày đọc/nghe toàn bộ sách của NXB Xây Dựng.</p><p class="pricing-price">650.000₫</p><button type="button" class="btn-pricing-cta btn-buy-package" data-package="XD6T" data-price="650.000₫" data-period="6 tháng">MUA GÓI</button></article>
+              <article class="pricing-card data-tab-card data-tab-card-main"><div class="data-card-logo"><img loading="lazy" src="assets/images/logo-nxbxaydung.svg" alt="NXB Xây Dựng" onerror="this.closest('.data-card-logo').style.display='none'"></div><h3>NXB Xây Dựng - 12 Tháng</h3><p class="data-card-note">365 ngày đọc/nghe toàn bộ sách của NXB Xây Dựng.</p><p class="pricing-price">1.200.000₫</p><button type="button" class="btn-pricing-cta btn-buy-package" data-package="XD12T" data-price="1.200.000₫" data-period="12 tháng">MUA GÓI</button></article>
+            </div>
+          </section>
+
+          <section class="data-tab-group mb-4">
+            <div class="data-tab-group-head text-center">
+              <h3>Gói cơ sở dữ liệu điện tử - Nhà xuất bản Hà Nội</h3>
+              <p>Dành cho nhu cầu tra cứu, tham khảo dữ liệu chuyên ngành từ Nhà xuất bản Hà Nội.</p>
+            </div>
+            <div class="data-tab-grid data-tab-grid-5">
+              <article class="pricing-card data-tab-card data-tab-card-main"><div class="data-card-logo"><img loading="lazy" src="assets/images/logo-nxbhanoi.svg" alt="NXB Hà Nội" onerror="this.closest('.data-card-logo').style.display='none'"></div><h3>NXB Hà Nội - 10 Ngày</h3><p class="data-card-note">10 ngày đọc/nghe toàn bộ sách của NXB Hà Nội.</p><p class="pricing-price">50.000₫</p><button type="button" class="btn-pricing-cta btn-buy-package" data-package="HN10N" data-price="50.000₫" data-period="10 ngày">MUA GÓI</button></article>
+              <article class="pricing-card data-tab-card data-tab-card-main"><div class="data-card-logo"><img loading="lazy" src="assets/images/logo-nxbhanoi.svg" alt="NXB Hà Nội" onerror="this.closest('.data-card-logo').style.display='none'"></div><h3>NXB Hà Nội - 1 Tháng</h3><p class="data-card-note">30 ngày đọc/nghe toàn bộ sách của NXB Hà Nội.</p><p class="pricing-price">150.000₫</p><button type="button" class="btn-pricing-cta btn-buy-package" data-package="HN1T" data-price="150.000₫" data-period="1 tháng">MUA GÓI</button></article>
+              <article class="pricing-card data-tab-card data-tab-card-main"><div class="data-card-logo"><img loading="lazy" src="assets/images/logo-nxbhanoi.svg" alt="NXB Hà Nội" onerror="this.closest('.data-card-logo').style.display='none'"></div><h3>NXB Hà Nội - 3 Tháng</h3><p class="data-card-note">90 ngày đọc/nghe toàn bộ sách của NXB Hà Nội.</p><p class="pricing-price">300.000₫</p><button type="button" class="btn-pricing-cta btn-buy-package" data-package="HN3T" data-price="300.000₫" data-period="3 tháng">MUA GÓI</button></article>
+              <article class="pricing-card data-tab-card data-tab-card-main"><div class="data-card-logo"><img loading="lazy" src="assets/images/logo-nxbhanoi.svg" alt="NXB Hà Nội" onerror="this.closest('.data-card-logo').style.display='none'"></div><h3>NXB Hà Nội - 6 Tháng</h3><p class="data-card-note">180 ngày đọc/nghe toàn bộ sách của NXB Hà Nội.</p><p class="pricing-price">450.000₫</p><button type="button" class="btn-pricing-cta btn-buy-package" data-package="HN6T" data-price="450.000₫" data-period="6 tháng">MUA GÓI</button></article>
+              <article class="pricing-card data-tab-card data-tab-card-main"><div class="data-card-logo"><img loading="lazy" src="assets/images/logo-nxbhanoi.svg" alt="NXB Hà Nội" onerror="this.closest('.data-card-logo').style.display='none'"></div><h3>NXB Hà Nội - 12 Tháng</h3><p class="data-card-note">365 ngày đọc/nghe toàn bộ sách của NXB Hà Nội.</p><p class="pricing-price">900.000₫</p><button type="button" class="btn-pricing-cta btn-buy-package" data-package="HN12T" data-price="900.000₫" data-period="12 tháng">MUA GÓI</button></article>
+            </div>
+          </section>
+
+          <section class="data-tab-group mb-5">
+            <div class="data-tab-group-head text-center">
+              <h3>Gói cơ sở dữ liệu điện tử - Nhà xuất bản Tri Thức</h3>
+              <p>Kho dữ liệu học thuật, tham khảo mở rộng cho nghiên cứu và tự học.</p>
+            </div>
+            <div class="data-tab-grid data-tab-grid-5">
+              <article class="pricing-card data-tab-card data-tab-card-main"><div class="data-card-logo"><img loading="lazy" src="assets/images/logo-nxbtrithuc.svg" alt="NXB Tri Thức" onerror="this.closest('.data-card-logo').style.display='none'"></div><h3>NXB Tri Thức - 10 Ngày</h3><p class="data-card-note">10 ngày đọc/nghe toàn bộ sách của NXB Tri Thức.</p><p class="pricing-price">50.000₫</p><button type="button" class="btn-pricing-cta btn-buy-package" data-package="TT10N" data-price="50.000₫" data-period="10 ngày">MUA GÓI</button></article>
+              <article class="pricing-card data-tab-card data-tab-card-main"><div class="data-card-logo"><img loading="lazy" src="assets/images/logo-nxbtrithuc.svg" alt="NXB Tri Thức" onerror="this.closest('.data-card-logo').style.display='none'"></div><h3>NXB Tri Thức - 1 Tháng</h3><p class="data-card-note">30 ngày đọc/nghe toàn bộ sách của NXB Tri Thức.</p><p class="pricing-price">150.000₫</p><button type="button" class="btn-pricing-cta btn-buy-package" data-package="TT1T" data-price="150.000₫" data-period="1 tháng">MUA GÓI</button></article>
+              <article class="pricing-card data-tab-card data-tab-card-main"><div class="data-card-logo"><img loading="lazy" src="assets/images/logo-nxbtrithuc.svg" alt="NXB Tri Thức" onerror="this.closest('.data-card-logo').style.display='none'"></div><h3>NXB Tri Thức - 3 Tháng</h3><p class="data-card-note">90 ngày đọc/nghe toàn bộ sách của NXB Tri Thức.</p><p class="pricing-price">450.000₫</p><button type="button" class="btn-pricing-cta btn-buy-package" data-package="TT3T" data-price="450.000₫" data-period="3 tháng">MUA GÓI</button></article>
+              <article class="pricing-card data-tab-card data-tab-card-main"><div class="data-card-logo"><img loading="lazy" src="assets/images/logo-nxbtrithuc.svg" alt="NXB Tri Thức" onerror="this.closest('.data-card-logo').style.display='none'"></div><h3>NXB Tri Thức - 6 Tháng</h3><p class="data-card-note">180 ngày đọc/nghe toàn bộ sách của NXB Tri Thức.</p><p class="pricing-price">800.000₫</p><button type="button" class="btn-pricing-cta btn-buy-package" data-package="TT6T" data-price="800.000₫" data-period="6 tháng">MUA GÓI</button></article>
+              <article class="pricing-card data-tab-card data-tab-card-main"><div class="data-card-logo"><img loading="lazy" src="assets/images/logo-nxbtrithuc.svg" alt="NXB Tri Thức" onerror="this.closest('.data-card-logo').style.display='none'"></div><h3>NXB Tri Thức - 12 Tháng</h3><p class="data-card-note">365 ngày đọc/nghe toàn bộ sách của NXB Tri Thức.</p><p class="pricing-price">1.500.000₫</p><button type="button" class="btn-pricing-cta btn-buy-package" data-package="TT12T" data-price="1.500.000₫" data-period="12 tháng">MUA GÓI</button></article>
+            </div>
+          </section>
+
+          <section class="data-benefits-wrap mb-4">
+            <div class="data-benefits-head text-center">
+              <h3>
+                <span class="data-benefits-title-main">Lý do đăng ký gói</span>
+                <span class="data-benefits-title-highlight">thành viên Benito?</span>
+              </h3>
+            </div>
+            <div class="data-benefits-grid">
+              <article class="data-benefit-card">
+                <span class="data-benefit-icon"><i class="bi bi-journal-bookmark"></i></span>
+                <h4>Sử dụng cơ sở dữ liệu chuyên ngành</h4>
+                <p>Truy cập kho sách bản quyền theo từng lĩnh vực, cập nhật liên tục theo chuyên ngành.</p>
+              </article>
+              <article class="data-benefit-card">
+                <span class="data-benefit-icon"><i class="bi bi-globe2"></i></span>
+                <h4>Đọc mọi lúc mọi nơi</h4>
+                <p>Đồng bộ tài khoản trên nhiều thiết bị, đọc/nghe liền mạch dù đổi nền tảng.</p>
+              </article>
+              <article class="data-benefit-card">
+                <span class="data-benefit-icon"><i class="bi bi-link-45deg"></i></span>
+                <h4>Công nghệ liên tục nâng cấp</h4>
+                <p>Hệ thống tối ưu hiệu năng định kỳ để trải nghiệm đọc/nghe luôn ổn định và mượt.</p>
+              </article>
+              <article class="data-benefit-card">
+                <span class="data-benefit-icon"><i class="bi bi-shield-lock"></i></span>
+                <h4>Bảo mật dữ liệu</h4>
+                <p>Thông tin tài khoản và lịch sử sử dụng được bảo vệ theo tiêu chuẩn bảo mật hiện đại.</p>
+              </article>
+              <article class="data-benefit-card">
+                <span class="data-benefit-icon"><i class="bi bi-laptop"></i></span>
+                <h4>Trải nghiệm đọc như sách giấy</h4>
+                <p>Giao diện thân thiện, tập trung vào nội dung để tăng hiệu quả học tập và nghiên cứu.</p>
+              </article>
+            </div>
+          </section>
         </div>
 
-        <div class="col-lg-3 col-md-6">
-          <article class="pricing-card h-100">
-            <span class="pricing-chip">Gói tuần VIP</span>
-            <h3>BBS40</h3>
-            <p class="pricing-price">40.000đ <small>/ tuần</small></p>
-            <ul>
-              <li><i class="bi bi-check2-circle"></i> 4GB Data tốc độ cao (hết lưu lượng thì dừng truy cập hoặc chuyển sang gói Data khác đang dùng).</li>
-              <li><i class="bi bi-check2-circle"></i> 01 License BenBooks Cơ bản + quyền lợi toàn bộ nội dung BenBooks (cơ bản + VIP).</li>
-              <li><i class="bi bi-check2-circle"></i> Giá cước: 40.000đ / 7 ngày.</li>
-            </ul>
-            <button type="button" class="btn-pricing-cta btn-buy-package" data-package="BBS40" data-price="40.000đ" data-period="7 ngày">MUA GÓI</button>
-          </article>
+        <div class="tab-pane fade" id="pane-content" role="tabpanel" aria-labelledby="tab-content" tabindex="0">
+          <section class="pricing-card text-center py-5 mb-5">
+            <h3 class="mb-0">Nội dung đang được cập nhật</h3>
+          </section>
         </div>
+      </div>
 
-        <div class="col-lg-3 col-md-6">
-          <article class="pricing-card h-100">
-            <span class="pricing-chip">Gói tháng VIP</span>
-            <h3>BBS90</h3>
-            <p class="pricing-price">90.000đ <small>/ tháng</small></p>
-            <ul>
-              <li><i class="bi bi-check2-circle"></i> 8GB Data tốc độ cao (hết lưu lượng thì dừng truy cập hoặc chuyển sang gói Data khác đang dùng).</li>
-              <li><i class="bi bi-check2-circle"></i> 01 License BenBooks Cơ bản + quyền lợi toàn bộ nội dung BenBooks (cơ bản + VIP).</li>
-              <li><i class="bi bi-check2-circle"></i> Giá cước: 90.000đ / 30 ngày.</li>
-            </ul>
-            <button type="button" class="btn-pricing-cta btn-buy-package" data-package="BBS90" data-price="90.000đ" data-period="30 ngày">MUA GÓI</button>
-          </article>
-        </div>
-      </section>
-
-      <section class="pricing-cta">
-        <div>
-          <h3>Kích hoạt nhanh qua SMS</h3>
-          <p>Soạn `DKP &lt;MÃ_GÓI&gt;` hoặc `DKM &lt;MÃ_GÓI&gt;` gửi `888` để đăng ký gói.</p>
-        </div>
-        <div class="pricing-cta-actions">
-          <a href="login.html" class="btn btn-warning fw-bold px-4">Kích hoạt tài khoản</a>
-          <a href="my-account.html" class="btn btn-outline-dark fw-bold px-4">Xem tài khoản</a>
-        </div>
-      </section>
     </div>
   </main>
 
@@ -149,7 +298,7 @@
           <div class="contact-row"><div class="contact-icon"><i class="bi bi-file-earmark-text"></i></div><p>Mã số thuế: 0109653575</p></div>
         </div>
         <div class="footer-col footer-nav-group"><h5>Hỗ trợ khách hàng</h5><ul><li><a href="#">Hướng dẫn đọc sách ebook</a></li><li><a href="#">Hướng dẫn thuê sách ebook</a></li><li><a href="#">Hướng dẫn đăng ký tài khoản</a></li></ul></div>
-        <div class="footer-col footer-nav-group"><h5>Chính sách - điều khoản</h5><ul><li><a href="#">Chính sách bảo mật</a></li><li><a href="#">Điều khoản sử dụng</a></li></ul></div>
+        <div class="footer-col footer-nav-group"><h5>Chính sách - Điều khoản</h5><ul><li><a href="#">Chính sách bảo mật</a></li><li><a href="#">Điều khoản sử dụng</a></li></ul></div>
         <div class="footer-col footer-nav-group"><h5>Về chúng tôi</h5><ul><li><a href="#">Giới thiệu</a></li><li><a href="#">Liên hệ</a></li></ul></div>
       </div>
       <div class="footer-bottom-row">
@@ -186,6 +335,14 @@
           const pkg = btn.getAttribute('data-package');
           const price = btn.getAttribute('data-price');
           const period = btn.getAttribute('data-period');
+
+          const isCopyrightTab = !!btn.closest('#pane-data');
+          if (isCopyrightTab) {
+            const target = `checkout.html?pkg=${encodeURIComponent(pkg || '')}&price=${encodeURIComponent(price || '')}&period=${encodeURIComponent(period || '')}`;
+            window.location.href = target;
+            return;
+          }
+
           messageEl.textContent = `Quý khách vui lòng gửi yêu cầu đăng ký DV ${pkg} (${price}/${period}). Để xác nhận đăng ký và gia hạn DV, soạn DKP ${pkg} gửi 888 (hoặc DKM ${pkg} gửi 888).`;
           guideModal.show();
         });

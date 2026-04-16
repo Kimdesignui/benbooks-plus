@@ -101,7 +101,7 @@
             </div>
             <div class="mt-3 d-flex gap-2 flex-wrap">
               <button class="btn btn-warning fw-bold px-4">Lưu thay đổi</button>
-              <button class="btn btn-outline-dark fw-bold px-4">Đổi mật khẩu</button>
+              <button class="btn btn-outline-dark fw-bold px-4" id="btn-change-password">Đổi mật khẩu</button>
             </div>
           </section>
 
@@ -207,6 +207,11 @@
         localStorage.removeItem('benbooks_loggedIn');
         localStorage.removeItem('benbooks_phone');
         window.location.href = 'index.html';
+      });
+
+      const changePasswordBtn = document.getElementById('btn-change-password');
+      changePasswordBtn?.addEventListener('click', function () {
+        window.location.href = 'change-password.html';
       });
     });
   </script>

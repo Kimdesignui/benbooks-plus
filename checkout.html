@@ -1,0 +1,299 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Thanh toán gói cước BenBooks">
+  <title>Thanh Toán - BenBooks</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="assets/images/benito-logo-short.svg">
+</head>
+<body>
+  <header class="site-header" id="site-header">
+    <div class="container-1440">
+      <div class="header-inner">
+        <a href="index.html" class="header-logo"><img loading="lazy" src="assets/images/benbooks-logo.svg" alt="BenBooks"></a>
+        <div class="header-mobile-right">
+          <a href="goi-cuoc.html" class="vip-badge-link"><img loading="lazy" src="assets/images/vip-icon.svg" class="vip-badge-icon" alt="VIP"></a>
+          <div class="divider-vertical"></div>
+          <a href="my-account.html" class="btn-user-avatar-mobile" id="btn-user-mobile"><i class="bi bi-person-fill"></i></a>
+        </div>
+        <div class="header-search-wrapper">
+          <button class="btn-mobile-menu" aria-label="Menu" id="btn-mobile-menu-btn"><i class="bi bi-list"></i></button>
+          <div class="header-search-container">
+            <div class="header-search">
+              <input type="text" id="header-search-input" placeholder="Nhập từ khóa tìm kiếm">
+              <button class="btn-search"><i class="bi bi-search"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="header-actions">
+          <div class="header-hotline"><i class="bi bi-telephone-inbound"></i><div class="hotline-text"><span class="hotline-lbl">Hotline:</span><strong>0382832993</strong></div></div>
+          <a href="goi-cuoc.html" class="btn-goicuoc"><img loading="lazy" src="assets/images/vip-icon.svg" class="vip-img-icon" alt="VIP"> Gói Cước</a>
+          <a href="my-account.html" class="btn-user-avatar" id="btn-user-desktop"><i class="bi bi-person-fill"></i></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="checkout-page pt-4 pb-5">
+    <aside class="sidebar d-lg-none" id="sidebar-content"></aside>
+    <div class="sidebar-overlay d-lg-none" id="sidebar-overlay"></div>
+
+    <div class="container-1440">
+      <nav class="breadcrumb-bar mb-3">
+        <a href="index.html"><i class="bi bi-house"></i> Trang chủ</a>
+        <span class="breadcrumb-sep">/</span>
+        <a href="goi-cuoc.html"> Gói cước</a>
+        <span class="breadcrumb-sep">/</span>
+        <span> Thanh toán</span>
+      </nav>
+
+      <div class="row g-4">
+        <div class="col-xl-8">
+          <section class="checkout-card mb-4">
+            <div class="checkout-card-head">
+              <h2>Chọn hình thức thanh toán</h2>
+            </div>
+            <div class="checkout-pay-list">
+              <label class="checkout-pay-item active">
+                <input type="radio" name="paymentMethod" value="vnpay" checked>
+                <span class="checkout-pay-icon"><img loading="lazy" src="assets/images/vn-pay.png" alt="VN Pay"></span>
+                <span>Thanh toán qua VN Pay</span>
+              </label>
+              <label class="checkout-pay-item">
+                <input type="radio" name="paymentMethod" value="coin">
+                <span class="checkout-pay-icon"><img loading="lazy" src="assets/images/coin.png" alt="Book coin"></span>
+                <span>Thanh toán bằng ví Book coin (Số dư 0 bc)</span>
+              </label>
+              <label class="checkout-pay-item">
+                <input type="radio" name="paymentMethod" value="bank">
+                <span class="checkout-pay-icon"><img loading="lazy" src="assets/images/bank.png" alt="Chuyển khoản"></span>
+                <span>Thanh toán chuyển khoản</span>
+              </label>
+            </div>
+          </section>
+
+          <section class="checkout-card mb-4">
+            <div class="checkout-card-head">
+              <h2>Thông tin khách hàng</h2>
+            </div>
+            <form class="row g-3">
+              <div class="col-12">
+                <div class="checkout-input-wrap"><i class="bi bi-person"></i><input type="text" class="form-control" value="Thắm VHMT"></div>
+              </div>
+              <div class="col-md-6">
+                <div class="checkout-input-wrap"><i class="bi bi-telephone"></i><input type="text" class="form-control" value="0944640039"></div>
+              </div>
+              <div class="col-md-6">
+                <div class="checkout-input-wrap"><i class="bi bi-envelope"></i><input type="email" class="form-control" value="thamdesign@vhmt.vn"></div>
+              </div>
+              <div class="col-12">
+                <div class="checkout-input-wrap"><i class="bi bi-geo-alt"></i><input type="text" class="form-control" placeholder="Địa chỉ"></div>
+              </div>
+            </form>
+          </section>
+
+          <section class="checkout-card">
+            <div class="checkout-card-head">
+              <h2>Thông tin sản phẩm</h2>
+            </div>
+            <div class="checkout-product-head">
+              <strong>Tất cả (1 sản phẩm)</strong>
+              <span>Thời gian</span>
+              <span>Thành tiền</span>
+            </div>
+            <div class="checkout-product-item">
+              <div class="checkout-product-title">
+                <span class="checkout-product-tag"><img loading="lazy" src="assets/images/vip-icon.svg" alt="VIP"></span>
+                <div>
+                  <strong id="checkout-product-name">Gói thành viên</strong>
+                  <p class="mb-0" id="checkout-product-desc">Truy cập nội dung bản quyền</p>
+                </div>
+              </div>
+              <span id="checkout-product-period">30 ngày</span>
+              <strong id="checkout-product-price">299.000₫</strong>
+            </div>
+          </section>
+        </div>
+
+        <div class="col-xl-4">
+          <aside class="checkout-summary sticky-top">
+            <div class="checkout-summary-line"><span>Tạm tính:</span><strong id="checkout-subtotal">299.000₫</strong></div>
+            <div class="checkout-discount-row">
+              <div class="checkout-input-wrap"><i class="bi bi-ticket-perforated"></i><input id="checkout-coupon" type="text" class="form-control" placeholder="Nhập mã giảm giá"></div>
+              <button type="button" class="btn btn-success" id="btn-apply-coupon">Áp dụng</button>
+            </div>
+            <div class="checkout-summary-line"><span>Giảm giá</span><strong id="checkout-discount">0₫</strong></div>
+            <hr>
+            <div class="checkout-summary-total"><span>Tổng tiền:</span><strong id="checkout-total">299.000₫</strong></div>
+            <button type="button" class="btn btn-danger w-100 fw-bold py-2" id="btn-place-order"><i class="bi bi-wallet2 me-1"></i>Đặt hàng</button>
+            <p class="checkout-term">Bằng việc tiến hành đặt mua hàng, bạn đồng ý với <a href="#">Điều khoản</a> của Công ty cổ phần văn hoá &amp; bản quyền Benito.</p>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="modal fade checkout-confirm-modal" id="paymentConfirmModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body text-center">
+          <div class="checkout-confirm-icon"><i class="bi bi-question-lg"></i></div>
+          <h3 class="checkout-confirm-title">Xác nhận thanh toán</h3>
+          <div class="checkout-confirm-actions">
+            <button type="button" class="btn btn-success" id="btn-confirm-payment"><i class="bi bi-check2-circle me-1"></i>Xác nhận</button>
+            <button type="button" class="btn btn-light" id="btn-cancel-payment" data-bs-dismiss="modal"><i class="bi bi-x-lg me-1"></i>Hủy</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer" id="site-footer">
+    <div class="footer-inner container-1440">
+      <div class="footer-grid">
+        <div class="footer-col footer-company-info">
+          <h5>Công ty cổ phần Văn hóa và Bản quyền Benito</h5>
+          <p class="company-time">(Hoạt động từ 8h - 17h, Thứ 2 - Thứ 7)</p>
+          <div class="contact-row"><div class="contact-icon"><i class="bi bi-geo-alt"></i></div><p>28D2 Khu giãn dân Yên Phúc, Hà Đông, Hà Nội</p></div>
+          <div class="contact-row"><div class="contact-icon"><i class="bi bi-telephone"></i></div><p>Hotline: <strong>0888 080 290</strong></p></div>
+          <div class="contact-row"><div class="contact-icon"><i class="bi bi-envelope"></i></div><p>Email: haianh.pham@benitovn.com</p></div>
+        </div>
+        <div class="footer-col footer-nav-group"><h5>Hỗ trợ khách hàng</h5><ul><li><a href="#">Hướng dẫn đọc sách ebook</a></li><li><a href="#">Hướng dẫn thuê sách ebook</a></li><li><a href="#">Hướng dẫn đăng ký tài khoản</a></li></ul></div>
+        <div class="footer-col footer-nav-group"><h5>Chính sách - Điều khoản</h5><ul><li><a href="#">Chính sách bảo mật</a></li><li><a href="#">Điều khoản sử dụng</a></li></ul></div>
+        <div class="footer-col footer-nav-group"><h5>Về chúng tôi</h5><ul><li><a href="#">Giới thiệu</a></li><li><a href="#">Liên hệ</a></li></ul></div>
+      </div>
+      <div class="footer-bottom-row">
+        <div class="app-downloads"><a href="#" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="assets/images/download-ios.svg" alt="App Store"></a><a href="#" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="assets/images/download-chplay.svg" alt="Google Play"></a></div>
+        <div class="footer-cert"><a href="#" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="assets/images/bo-cong-thuong.png" alt="Bộ Công Thương"></a></div>
+      </div>
+    </div>
+    <div class="footer-bottom">Copyright &copy; 2021 - Benito. All rights reserved.</div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const params = new URLSearchParams(window.location.search);
+      const pkg = params.get('pkg') || 'Gói thành viên';
+      const priceRaw = params.get('price') || '299.000₫';
+      const period = params.get('period') || '30 ngày';
+
+      const productName = document.getElementById('checkout-product-name');
+      const productDesc = document.getElementById('checkout-product-desc');
+      const productPeriod = document.getElementById('checkout-product-period');
+      const productPrice = document.getElementById('checkout-product-price');
+      const subtotalEl = document.getElementById('checkout-subtotal');
+      const discountEl = document.getElementById('checkout-discount');
+      const totalEl = document.getElementById('checkout-total');
+
+      function parseVnd(v) {
+        return Number((v || '').replace(/[^\d]/g, '')) || 0;
+      }
+
+      function formatVnd(v) {
+        return (v || 0).toLocaleString('vi-VN') + '₫';
+      }
+
+      let subtotal = parseVnd(priceRaw);
+      let discount = 0;
+
+      productName.textContent = pkg;
+      productDesc.textContent = 'Gói sách bản quyền - truy cập nội dung theo gói đăng ký';
+      productPeriod.textContent = period;
+      productPrice.textContent = formatVnd(subtotal);
+
+      function renderTotal() {
+        subtotalEl.textContent = formatVnd(subtotal);
+        discountEl.textContent = discount > 0 ? '-' + formatVnd(discount) : '0₫';
+        totalEl.textContent = formatVnd(Math.max(subtotal - discount, 0));
+      }
+
+      renderTotal();
+
+      const couponInput = document.getElementById('checkout-coupon');
+      const applyBtn = document.getElementById('btn-apply-coupon');
+      applyBtn?.addEventListener('click', function () {
+        const code = (couponInput?.value || '').trim().toUpperCase();
+        if (code === 'BENITO') {
+          discount = Math.min(61000, subtotal);
+        } else {
+          discount = 0;
+        }
+        renderTotal();
+      });
+
+      const paymentInputs = Array.from(document.querySelectorAll('input[name="paymentMethod"]'));
+      const paymentItems = Array.from(document.querySelectorAll('.checkout-pay-item'));
+      const paymentModalEl = document.getElementById('paymentConfirmModal');
+      const paymentModal = paymentModalEl && typeof bootstrap !== 'undefined' ? new bootstrap.Modal(paymentModalEl) : null;
+      const confirmPaymentBtn = document.getElementById('btn-confirm-payment');
+
+      let selectedMethod = (document.querySelector('input[name="paymentMethod"]:checked') || {}).value || 'vnpay';
+
+      function setActivePayment(inputEl) {
+        paymentInputs.forEach(function (item) {
+          item.checked = item === inputEl;
+          item.closest('.checkout-pay-item')?.classList.toggle('active', item === inputEl);
+        });
+      }
+
+      function setSelectedMethod(input) {
+        if (!input) return;
+        selectedMethod = input.value;
+        setActivePayment(input);
+      }
+
+      paymentItems.forEach(function (item) {
+        item.addEventListener('click', function (event) {
+          event.preventDefault();
+          const input = item.querySelector('input[name="paymentMethod"]');
+          setSelectedMethod(input);
+        });
+      });
+
+      paymentInputs.forEach(function (input) {
+        input.addEventListener('change', function () {
+          setSelectedMethod(input);
+        });
+      });
+
+      function getCurrentTotal() {
+        return Math.max(subtotal - discount, 0);
+      }
+
+      function proceedPayment() {
+        const totalAmount = getCurrentTotal();
+
+        if (selectedMethod === 'bank') {
+          const target = `transfer-payment.html?pkg=${encodeURIComponent(pkg || '')}&period=${encodeURIComponent(period || '')}&subtotal=${encodeURIComponent(subtotal)}&discount=${encodeURIComponent(discount)}&total=${encodeURIComponent(totalAmount)}`;
+          window.location.href = target;
+          return true;
+        }
+
+        if (selectedMethod === 'coin') {
+          alert('Số dư Book coin hiện tại là 0 bc. Vui lòng chọn phương thức thanh toán khác.');
+          return false;
+        }
+
+        alert('Xác nhận thanh toán qua VN Pay thành công. Hệ thống sẽ chuyển sang cổng thanh toán.');
+        return true;
+      }
+
+      document.getElementById('btn-place-order')?.addEventListener('click', function () {
+        paymentModal?.show();
+      });
+
+      confirmPaymentBtn?.addEventListener('click', function () {
+        paymentModal?.hide();
+        proceedPayment();
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Thông tin chuyển khoản - BenBooks">
+  <title>Thông Tin Chuyển Khoản - BenBooks</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="assets/images/benito-logo-short.svg">
+</head>
+<body>
+  <header class="site-header" id="site-header">
+    <div class="container-1440">
+      <div class="header-inner">
+        <a href="index.html" class="header-logo"><img loading="lazy" src="assets/images/benbooks-logo.svg" alt="BenBooks"></a>
+        <div class="header-mobile-right">
+          <a href="goi-cuoc.html" class="vip-badge-link"><img loading="lazy" src="assets/images/vip-icon.svg" class="vip-badge-icon" alt="VIP"></a>
+          <div class="divider-vertical"></div>
+          <a href="my-account.html" class="btn-user-avatar-mobile" id="btn-user-mobile"><i class="bi bi-person-fill"></i></a>
+        </div>
+        <div class="header-search-wrapper">
+          <button class="btn-mobile-menu" aria-label="Menu" id="btn-mobile-menu-btn"><i class="bi bi-list"></i></button>
+          <div class="header-search-container">
+            <div class="header-search">
+              <input type="text" id="header-search-input" placeholder="Nhập từ khóa tìm kiếm">
+              <button class="btn-search"><i class="bi bi-search"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="header-actions">
+          <div class="header-hotline"><i class="bi bi-telephone-inbound"></i><div class="hotline-text"><span class="hotline-lbl">Hotline:</span><strong>0382832993</strong></div></div>
+          <a href="goi-cuoc.html" class="btn-goicuoc"><img loading="lazy" src="assets/images/vip-icon.svg" class="vip-img-icon" alt="VIP"> Gói Cước</a>
+          <a href="my-account.html" class="btn-user-avatar" id="btn-user-desktop"><i class="bi bi-person-fill"></i></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="checkout-page pt-4 pb-5">
+    <aside class="sidebar d-lg-none" id="sidebar-content"></aside>
+    <div class="sidebar-overlay d-lg-none" id="sidebar-overlay"></div>
+
+    <div class="container-1440">
+      <nav class="breadcrumb-bar mb-3">
+        <a href="index.html"><i class="bi bi-house"></i></a>
+        <span class="breadcrumb-sep">/</span>
+        <span>Thông tin chuyển khoản</span>
+      </nav>
+
+      <div class="row g-4">
+        <div class="col-xl-8">
+          <section class="checkout-card">
+            <div class="checkout-card-head">
+              <h2>Thông tin thanh toán</h2>
+            </div>
+
+            <div class="checkout-transfer-body mb-3">
+              <div class="checkout-transfer-qr">
+                <img id="bank-transfer-qr" src="" alt="QR chuyển khoản">
+              </div>
+              <div class="checkout-transfer-help">
+                <h3><i class="bi bi-caret-left-fill"></i> Quét mã qua ứng dụng Ngân hàng</h3>
+                <div class="checkout-transfer-actions">
+                  <a href="#" class="checkout-transfer-link"><i class="bi bi-question-circle"></i> Xem hướng dẫn thanh toán chuyển khoản</a>
+                  <button type="button" class="btn btn-light checkout-btn-download" id="btn-download-qr">Tải mã QR</button>
+                </div>
+                <p class="checkout-transfer-note-box">Sau khi chuyển khoản thành công với <strong>nội dung chuyển khoản</strong> bên dưới đơn hàng sẽ được tự động xử lý, nếu sau 5 phút đơn hàng vẫn chưa được xử lý, bạn vui lòng liên hệ hotline hoặc livechat để được hỗ trợ.</p>
+              </div>
+            </div>
+
+            <div class="checkout-transfer-content-box">
+              <h4>Nội dung Chuyển khoản:</h4>
+              <div class="checkout-transfer-code-row">
+                <strong id="transfer-content-code">335853</strong>
+                <button type="button" class="btn-copy-code" id="btn-copy-transfer" aria-label="Copy mã chuyển khoản"><i class="bi bi-copy"></i></button>
+              </div>
+              <p>Lưu ý: Điền chính xác mã trên đây vào nội dung chuyển khoản để đơn hàng tự động kích hoạt.</p>
+            </div>
+
+            <div class="checkout-transfer-bank-info mt-3">
+              <div class="checkout-transfer-bank-row"><span>Ngân hàng</span><strong>Ngân hàng Quân đội - MB Bank</strong></div>
+              <div class="checkout-transfer-bank-row"><span>Chi nhánh</span><strong>PGD Phùng Hưng</strong></div>
+              <div class="checkout-transfer-bank-row"><span>Số tài khoản</span><strong>1123123333</strong></div>
+              <div class="checkout-transfer-bank-row"><span>Chủ tài khoản</span><strong>CTY CP VHBQ BENITO</strong></div>
+            </div>
+          </section>
+        </div>
+
+        <div class="col-xl-4">
+          <aside class="checkout-summary sticky-top">
+            <div class="checkout-summary-line"><span>Tạm tính:</span><strong id="transfer-subtotal">0₫</strong></div>
+            <div class="checkout-summary-line"><span>Giảm giá</span><strong id="transfer-discount">0₫</strong></div>
+            <div class="checkout-summary-line"><span>Phí ship</span><strong>0₫</strong></div>
+            <hr>
+            <div class="checkout-summary-total"><span>Tổng tiền:</span><strong id="transfer-total">0₫</strong></div>
+            <button type="button" class="btn btn-success w-100 fw-bold py-2 mb-2" id="btn-transfer-done">Tôi đã chuyển khoản</button>
+            <a href="index.html" class="btn btn-light w-100 fw-bold py-2">Quay lại trang chủ</a>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="modal fade checkout-confirm-modal transfer-done-modal" id="transferDoneModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body text-center">
+          <button type="button" class="btn-close transfer-done-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+          <div class="checkout-confirm-icon"><i class="bi bi-check-lg"></i></div>
+          <h3 class="checkout-confirm-title">Xác nhận chuyển khoản thành công</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer" id="site-footer">
+    <div class="footer-inner container-1440">
+      <div class="footer-grid">
+        <div class="footer-col footer-company-info">
+          <h5>Công ty cổ phần Văn hóa và Bản quyền Benito</h5>
+          <p class="company-time">(Hoạt động từ 8h - 17h, Thứ 2 - Thứ 7)</p>
+          <div class="contact-row"><div class="contact-icon"><i class="bi bi-geo-alt"></i></div><p>28D2 Khu giãn dân Yên Phúc, Hà Đông, Hà Nội</p></div>
+          <div class="contact-row"><div class="contact-icon"><i class="bi bi-telephone"></i></div><p>Hotline: <strong>0888 080 290</strong></p></div>
+          <div class="contact-row"><div class="contact-icon"><i class="bi bi-envelope"></i></div><p>Email: haianh.pham@benitovn.com</p></div>
+        </div>
+        <div class="footer-col footer-nav-group"><h5>Hỗ trợ khách hàng</h5><ul><li><a href="#">Hướng dẫn đọc sách ebook</a></li><li><a href="#">Hướng dẫn thuê sách ebook</a></li><li><a href="#">Hướng dẫn đăng ký tài khoản</a></li></ul></div>
+        <div class="footer-col footer-nav-group"><h5>Chính sách - Điều khoản</h5><ul><li><a href="#">Chính sách bảo mật</a></li><li><a href="#">Điều khoản sử dụng</a></li></ul></div>
+        <div class="footer-col footer-nav-group"><h5>Về chúng tôi</h5><ul><li><a href="#">Giới thiệu</a></li><li><a href="#">Liên hệ</a></li></ul></div>
+      </div>
+      <div class="footer-bottom-row">
+        <div class="app-downloads"><a href="#" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="assets/images/download-ios.svg" alt="App Store"></a><a href="#" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="assets/images/download-chplay.svg" alt="Google Play"></a></div>
+        <div class="footer-cert"><a href="#" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="assets/images/bo-cong-thuong.png" alt="Bộ Công Thương"></a></div>
+      </div>
+    </div>
+    <div class="footer-bottom">Copyright &copy; 2021 - Benito. All rights reserved.</div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const params = new URLSearchParams(window.location.search);
+      const subtotal = Number(params.get('subtotal') || 0);
+      const discount = Number(params.get('discount') || 0);
+      const total = Number(params.get('total') || Math.max(subtotal - discount, 0));
+
+      function formatVnd(v) {
+        return (v || 0).toLocaleString('vi-VN') + '₫';
+      }
+
+      const transferCode = '335853';
+      const qrUrl = `https://api.vietqr.io/image/970422-1123123333-6poJzS3.jpg?amount=${encodeURIComponent(total)}&addInfo=${encodeURIComponent(transferCode)}`;
+
+      const qrImg = document.getElementById('bank-transfer-qr');
+      if (qrImg) qrImg.src = qrUrl;
+      const qrBaseUrl = qrUrl.split('?')[0];
+
+      const subtotalEl = document.getElementById('transfer-subtotal');
+      const discountEl = document.getElementById('transfer-discount');
+      const totalEl = document.getElementById('transfer-total');
+      const codeEl = document.getElementById('transfer-content-code');
+
+      if (subtotalEl) subtotalEl.textContent = formatVnd(subtotal);
+      if (discountEl) discountEl.textContent = discount > 0 ? '-' + formatVnd(discount) : '0₫';
+      if (totalEl) totalEl.textContent = formatVnd(total);
+      if (codeEl) codeEl.textContent = transferCode;
+
+      document.getElementById('btn-copy-transfer')?.addEventListener('click', async function () {
+        try {
+          await navigator.clipboard.writeText(transferCode);
+          alert('Đã sao chép nội dung chuyển khoản.');
+        } catch (e) {
+          alert('Không thể sao chép tự động. Vui lòng copy thủ công.');
+        }
+      });
+
+      document.getElementById('btn-download-qr')?.addEventListener('click', function () {
+        const link = document.createElement('a');
+        link.href = qrBaseUrl;
+        link.download = 'vietqr.jpg';
+        link.rel = 'noopener';
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+      });
+
+      const transferDoneModalEl = document.getElementById('transferDoneModal');
+      const transferDoneModal = transferDoneModalEl && typeof bootstrap !== 'undefined'
+        ? new bootstrap.Modal(transferDoneModalEl)
+        : null;
+
+      document.getElementById('btn-transfer-done')?.addEventListener('click', function () {
+        transferDoneModal?.show();
+      });
+    });
+  </script>
+</body>
+</html>
