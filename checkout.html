@@ -180,9 +180,43 @@
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const params = new URLSearchParams(window.location.search);
-      const pkg = params.get('pkg') || 'Gói thành viên';
-      const priceRaw = params.get('price') || '299.000₫';
-      const period = params.get('period') || '30 ngày';
+      const vipMatch = window.location.pathname.match(/\/checkout\/payment-vip\/(\d+)/i);
+      const vipId = params.get('vip') || (vipMatch ? vipMatch[1] : '');
+
+      const packageByVipId = {
+        '165': { pkg: 'Benbook tổng hợp (90 ngày)', price: '349.000₫', period: '90 ngày' },
+        '166': { pkg: 'Benbook tổng hợp (02 năm)', price: '499.000₫', period: '02 năm' },
+        '163': { pkg: 'Benbook THPT (90 ngày)', price: '299.000₫', period: '90 ngày' },
+        '164': { pkg: 'Benbook THPT (02 năm)', price: '349.000₫', period: '02 năm' },
+        '161': { pkg: 'Benbook THCS (90 ngày)', price: '299.000₫', period: '90 ngày' },
+        '162': { pkg: 'Benbook THCS (02 năm)', price: '349.000₫', period: '02 năm' },
+        '159': { pkg: 'Benbook Tiểu học (02 năm)', price: '299.000₫', period: '02 năm' },
+        '160': { pkg: 'Benbook Tiểu học (02 năm)', price: '349.000₫', period: '02 năm' },
+        '5': { pkg: 'NXB Y Học - 10 Ngày', price: '50.000₫', period: '10 ngày' },
+        '16': { pkg: 'NXB Y Học - 1 Tháng', price: '150.000₫', period: '1 tháng' },
+        '17': { pkg: 'NXB Y Học - 3 Tháng', price: '350.000₫', period: '3 tháng' },
+        '18': { pkg: 'NXB Y Học - 6 Tháng', price: '650.000₫', period: '6 tháng' },
+        '19': { pkg: 'NXB Y Học - 12 Tháng', price: '1.200.000₫', period: '12 tháng' },
+        '42': { pkg: 'NXB Xây Dựng - 10 Ngày', price: '50.000₫', period: '10 ngày' },
+        '43': { pkg: 'NXB Xây Dựng - 1 Tháng', price: '150.000₫', period: '1 tháng' },
+        '44': { pkg: 'NXB Xây Dựng - 3 Tháng', price: '350.000₫', period: '3 tháng' },
+        '45': { pkg: 'NXB Xây Dựng - 6 Tháng', price: '650.000₫', period: '6 tháng' },
+        '46': { pkg: 'NXB Xây Dựng - 12 Tháng', price: '1.200.000₫', period: '12 tháng' },
+        '38': { pkg: 'NXB Hà Nội - 10 Ngày', price: '50.000₫', period: '10 ngày' },
+        '39': { pkg: 'NXB Hà Nội - 1 Tháng', price: '150.000₫', period: '1 tháng' },
+        '40': { pkg: 'NXB Hà Nội - 3 Tháng', price: '300.000₫', period: '3 tháng' },
+        '41': { pkg: 'NXB Hà Nội - 6 Tháng', price: '450.000₫', period: '6 tháng' },
+        '32': { pkg: 'NXB Tri Thức - 10 Ngày', price: '50.000₫', period: '10 ngày' },
+        '33': { pkg: 'NXB Tri Thức - 1 Tháng', price: '150.000₫', period: '1 tháng' },
+        '34': { pkg: 'NXB Tri Thức - 3 Tháng', price: '450.000₫', period: '3 tháng' },
+        '35': { pkg: 'NXB Tri Thức - 6 Tháng', price: '800.000₫', period: '6 tháng' },
+        '36': { pkg: 'NXB Tri Thức - 12 Tháng', price: '1.500.000₫', period: '12 tháng' }
+      };
+
+      const selectedByVip = packageByVipId[vipId] || null;
+      const pkg = params.get('pkg') || (selectedByVip ? selectedByVip.pkg : 'Gói thành viên');
+      const priceRaw = params.get('price') || (selectedByVip ? selectedByVip.price : '299.000₫');
+      const period = params.get('period') || (selectedByVip ? selectedByVip.period : '30 ngày');
 
       const productName = document.getElementById('checkout-product-name');
       const productDesc = document.getElementById('checkout-product-desc');
@@ -297,3 +331,4 @@
   </script>
 </body>
 </html>
+
