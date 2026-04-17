@@ -1,1 +1,1 @@
-﻿/checkout/payment-vip/:id  /checkout.html?vip=:id  200
+﻿/checkout/payment-vip/*  /checkout.html  200
