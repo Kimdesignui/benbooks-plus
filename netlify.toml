@@ -1,4 +1,0 @@
-﻿[[redirects]]
-  from = "/checkout/payment-vip/*"
-  to = "/checkout.html"
-  status = 200
